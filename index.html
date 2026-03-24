@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- ══════════════════════════════════════════════════
+       TÍTULO DE LA PÁGINA (aparece en la pestaña del navegador)
+       Cámbialo aquí para cambiar el nombre del sitio.
+  ══════════════════════════════════════════════════ -->
+  <title>Upc System – Reparaciones & Accesorios</title>
+
+  <!-- Fuentes de Google — Syne (títulos) + DM Sans (cuerpo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet"/>
+
+  <!-- Íconos FontAwesome (los íconos de teléfono, laptop, etc.) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Estilos globales (colores, nav, botones, animaciones) -->
+  <link rel="stylesheet" href="css/global.css"/>
+
+  <!-- Estilos específicos de esta página -->
+  <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     BARRA DE NAVEGACIÓN
+     Para cambiar los links del menú, edita los <a href="...">
+     Para cambiar el nombre del logo, edita el texto "Tech<span>Fix</span> Pro"
+══════════════════════════════════════════════════════ -->
+<nav>
+  <div class="logo">Upc <span>System</span> Pro</div>
+
+  <!-- Menú escritorio -->
+  <ul class="nav-menu">
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#tecnicos">Técnicos</a></li>
+    <li><a href="#catalogo">Catálogo</a></li>
+    <li><a href="#ubicacion">Ubicación</a></li>
+    <li><a href="login.html">Iniciar Sesión</a></li>
+    <li><a href="register.html" class="btn-nav">Registrarse</a></li>
+  </ul>
+
+  <!-- Botón hamburguesa (visible solo en móvil) -->
+  <button class="hamburger" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+</nav>
+
+<!-- Menú móvil desplegable (se abre al presionar el hamburger) -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servicios" onclick="toggleMenu()">Servicios</a>
+  <a href="#tecnicos"  onclick="toggleMenu()">Técnicos</a>
+  <a href="#catalogo"  onclick="toggleMenu()">Catálogo</a>
+  <a href="#ubicacion" onclick="toggleMenu()">Ubicación</a>
+  <a href="login.html">Iniciar Sesión</a>
+  <a href="register.html">Registrarse</a>
+</div>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECCIÓN HERO (pantalla de bienvenida)
+     
+     Para modificar:
+     · Chip arriba: cambia el texto dentro de .hero-tag
+     · Título principal: cambia el H1 (la palabra en <em> queda en azul)
+     · Párrafo: cambia el <p> con la descripción
+     · Botones: cambia los textos y href de .btn-primary y .btn-outline
+     · Estadísticas: cambia los números en .stat-num y las etiquetas en .stat-label
+══════════════════════════════════════════════════════ -->
+<section class="hero">
+  <div class="hero-content">
+
+    <!-- Chip / etiqueta pequeña arriba del título -->
+    <div class="hero-tag">⚡ Reparaciones Profesionales</div>
+
+    <!-- Título principal — la palabra dentro de <em> se pinta de azul -->
+    <h1>Tus dispositivos en manos de <em>expertos</em></h1>
+
+    <!-- Descripción breve del negocio -->
+    <p>Reparamos teléfonos, tablets y computadoras con garantía. Además, encuentra los mejores accesorios para tu equipo.</p>
+
+    <!-- Botones de acción -->
+    <div class="hero-btns">
+      <a href="login.html"  class="btn-primary">Solicitar Reparación</a>
+      <a href="#catalogo"   class="btn-outline">Ver Catálogo</a>
+    </div>
+
+    <!-- Estadísticas del negocio -->
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">+3500</div>           <!-- NÚMERO DE ESTADÍSTICA -->
+        <div class="stat-label">Dispositivos reparados</div>  <!-- ETIQUETA -->
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">99%</div>
+        <div class="stat-label">Clientes satisfechos</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">4</div>
+        <div class="stat-label">Técnicos certificados</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">8 meses</div>
+        <div class="stat-label">Garantía en reparaciones</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECCIÓN SERVICIOS
+     
+     Para agregar un servicio: copia un .service-card completo y pégalo.
+     Para eliminar un servicio: borra el .service-card correspondiente.
+     
+     Cada tarjeta tiene:
+     · Ícono FontAwesome (busca en https://fontawesome.com/icons)
+     · Nombre del servicio (H3)
+     · Descripción (p)
+     · Precio (div.price-tag)
+══════════════════════════════════════════════════════ -->
+<section id="servicios">
+  <div class="container">
+    <div class="services-header fade-in">
+      <div class="section-tag">Lo que hacemos</div>
+      <h2 class="section-title">Servicios de reparación</h2>
+      <p class="section-sub" style="margin:0 auto;">Soluciones rápidas y confiables para todos tus dispositivos electrónicos.</p>
+    </div>
+
+    <div class="services-grid">
+
+      <!-- SERVICIO 1: Teléfonos -->
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-mobile-screen"></i></div>
+        <h3>Teléfonos Móviles</h3>         <!-- NOMBRE DEL SERVICIO -->
+        <p>Cambio de pantallas, baterías, cámaras, reparación de software y mucho más para todas las marcas.</p>
+        <div class="price-tag">Desde $45.000 COP</div>  <!-- PRECIO -->
+      </div>
+
+      <!-- SERVICIO 2: Tablets -->
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-tablet-screen-button"></i></div>
+        <h3>Tablets</h3>
+        <p>Reparamos tablets Android y iPad. Pantallas rotas, problemas de carga y fallas de sistema.</p>
+        <div class="price-tag">Desde $50.000 COP</div>
+      </div>
+
+      <!-- SERVICIO 3: Computadoras -->
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-laptop"></i></div>
+        <h3>Computadoras</h3>
+        <p>Reparación de portátiles y de escritorio. RAM, disco duro, pantalla, virus y optimización de sistema.</p>
+        <div class="price-tag">Desde $80.000 COP</div>
+      </div>
+
+      <!-- SERVICIO 4: Consolas -->
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-gamepad"></i></div>
+        <h3>Consolas de Juego</h3>
+        <p>PlayStation, Xbox y Nintendo. Lector de discos, mandos, HDMI y actualizaciones de firmware.</p>
+        <div class="price-tag">Desde $60.000 COP</div>
+      </div>
+
+
+      <!-- SERVICIO 5: Impresoras -->
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-print"></i></div>
+        <h3>Impresoras</h3>
+        <p>Mantenimiento, cambio de cartuchos, cabezales y configuración de red para impresoras de toda marca.</p>
+        <div class="price-tag">Desde $35.000 COP</div>
+      </div>
+
+      <!-- SERVICIO 6: Redes -->
+      <div class="service-card fade-in">
+        <div class="service-icon"><i class="fas fa-network-wired"></i></div>
+        <h3>Redes & Configuración</h3>
+        <p>Instalación de routers, redes empresariales, configuración de dispositivos y soporte técnico remoto.</p>
+        <div class="price-tag">Desde $30.000 COP</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECCIÓN TÉCNICOS
+     
+     Para agregar un técnico: copia un .tech-card y pégalo.
+     Para eliminar un técnico: borra el .tech-card correspondiente.
+     
+     Cada tarjeta tiene:
+     · Emoji avatar (dentro de .tech-avatar)
+     · Nombre (H3)
+     · Especialidad (.role)
+     · Biografía (.bio)
+     · Habilidades (span.skill-tag — puedes agregar/quitar)
+     · Calificación (.rating con estrellas)
+══════════════════════════════════════════════════════ -->
+<section id="tecnicos">
+  <div class="container">
+    <div class="techs-header fade-in">
+      <div>
+        <div class="section-tag">Nuestro equipo</div>
+        <h2 class="section-title">Técnicos certificados</h2>
+      </div>
+      <a href="login.html" class="btn-outline">Contactar un técnico →</a>
+    </div>
+
+    <div class="techs-grid">
+
+      <!-- TÉCNICO 1 -->
+      <div class="tech-card fade-in">
+        <div class="tech-avatar">👨‍💻</div>          <!-- EMOJI DEL TÉCNICO -->
+        <h3>Alan Amador</h3>                      <!-- NOMBRE DEL TÉCNICO -->
+        <div class="role">Especialista en Móviles</div>  <!-- ESPECIALIDAD -->
+        <div class="bio">+5 años reparando dispositivos iOS y Android. Certificado Apple y Samsung.</div>  <!-- BIO -->
+        <div class="tech-skills">
+          <!-- HABILIDADES (agrega o quita span.skill-tag) -->
+          <span class="skill-tag">iPhone</span>
+          <span class="skill-tag">Samsung</span>
+          <span class="skill-tag">Xiaomi</span>
+        </div>
+        <div class="rating">★★★★★ <span style="color:var(--muted);">5.0</span></div>  <!-- CALIFICACIÓN -->
+      </div>
+
+      <!-- TÉCNICO 2 -->
+      <div class="tech-card fade-in">
+        <div class="tech-avatar">👩‍🔧</div>
+        <h3>Johsua Aponte</h3>
+        <div class="role">Técnico de Computadoras</div>
+        <div class="bio">Especialista en laptops HP, Dell y MacBook. Experta en recuperación de datos.</div>
+        <div class="tech-skills">
+          <span class="skill-tag">MacBook</span>
+          <span class="skill-tag">Dell</span>
+          <span class="skill-tag">Asus</span>
+          <span class="skill-tag">HP</span>
+        </div>
+        <div class="rating">★★★★★ <span style="color:var(--muted);">4.9</span></div>
+      </div>
+
+      <!-- TÉCNICO 3 -->
+      <div class="tech-card fade-in">
+        <div class="tech-avatar">👨‍🔬</div>
+        <h3>Venito Camelo</h3>
+        <div class="role">Redes & Software</div>
+        <div class="bio">Ingeniero de sistemas con experiencia en soporte técnico empresarial y redes.</div>
+        <div class="tech-skills">
+          <span class="skill-tag">Redes</span>
+          <span class="skill-tag">Windows</span>
+          <span class="skill-tag">Linux</span>
+        </div>
+        <div class="rating">★★★★½ <span style="color:var(--muted);">4.7</span></div>
+      </div>
+
+      <!-- TÉCNICO 4 -->
+      <div class="tech-card fade-in">
+        <div class="tech-avatar">👩‍💻</div>
+        <h3>Rosa Melano</h3>
+        <div class="role">Tablets & Consolas</div>
+        <div class="bio">Especialista en iPad, android y consolas PlayStation y Xbox. Reparaciones de precisión.</div>
+        <div class="tech-skills">
+          <span class="skill-tag">iPad</span>
+          <span class="skill-tag">PS5</span>
+          <span class="skill-tag">Xbox</span>
+        </div>
+        <div class="rating">★★★★★ <span style="color:var(--muted);">4.8</span></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECCIÓN CATÁLOGO DE ACCESORIOS
+     
+     Para agregar un producto: copia un .product-card y pégalo.
+     Atributo data-cat="categoria" — debe coincidir con los filtros.
+     Categorías disponibles: fundas | cargadores | audio | cables
+     
+     Para agregar una nueva categoría:
+     1. Agrega un botón de filtro con onclick="filterCatalog('nuevacat', this)"
+     2. Pon data-cat="nuevacat" en las tarjetas correspondientes
+     
+     Cada tarjeta tiene:
+     · Emoji (dentro de .product-img)
+     · Badge opcional (span.product-badge — ej: "Nuevo", "Oferta")
+     · Nombre del producto (H4)
+     · Descripción (.desc)
+     · Precio (.product-price)
+══════════════════════════════════════════════════════ -->
+<section id="catalogo">
+  <div class="container">
+    <div class="catalog-header fade-in">
+      <div class="section-tag">Tienda</div>
+      <h2 class="section-title">Catálogo de accesorios</h2>
+      <p class="section-sub" style="margin:0 auto 2rem;">Los mejores accesorios al mejor precio. Envío a domicilio disponible.</p>
+    </div>
+
+    <!-- Botones de filtro por categoría -->
+    <div class="catalog-tabs">
+      <button class="tab-btn active"  onclick="filterCatalog('todos',     this)">Todos</button>
+      <button class="tab-btn"         onclick="filterCatalog('fundas',    this)">Fundas</button>
+      <button class="tab-btn"         onclick="filterCatalog('cargadores',this)">Cargadores</button>
+      <button class="tab-btn"         onclick="filterCatalog('audio',     this)">Audio</button>
+      <button class="tab-btn"         onclick="filterCatalog('cables',    this)">Cables</button>
+    </div>
+
+    <!-- Grilla de productos -->
+    <div class="catalog-grid" id="catalogGrid">
+
+      <!-- PRODUCTO 1 -->
+      <div class="product-card" data-cat="fundas">       <!-- data-cat = categoría del filtro -->
+        <div class="product-img">📱
+          <span class="product-badge">Nuevo</span>       <!-- BADGE (opcional — bórralo si no quieres) -->
+        </div>
+        <div class="product-info">
+          <h4>Funda iPhone 15</h4>                       <!-- NOMBRE DEL PRODUCTO -->
+          <div class="desc">Silicona premium con protección MagSafe</div>  <!-- DESCRIPCIÓN -->
+          <div class="product-footer">
+            <span class="product-price">$28.000</span>   <!-- PRECIO -->
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 2 -->
+      <div class="product-card" data-cat="fundas">
+        <div class="product-img">📱 </div>
+        <div class="product-info">
+          <h4>Funda Samsung S24</h4>
+          <div class="desc">Armor case antigolpes nivel militar</div>
+          <div class="product-footer">
+            <span class="product-price">$32.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 3 -->
+      <div class="product-card" data-cat="cargadores">
+        <div class="product-img">⚡<span class="product-badge">Top</span></div>
+        <div class="product-info">
+          <h4>Cargador USB-C 65W</h4>
+          <div class="desc">Carga rápida universal GaN</div>
+          <div class="product-footer">
+            <span class="product-price">$55.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 4 -->
+      <div class="product-card" data-cat="cargadores">
+        <div class="product-img">🔋</div>
+        <div class="product-info">
+          <h4>Power Bank 20.000mAh</h4>
+          <div class="desc">Carga 3 dispositivos simultáneamente</div>
+          <div class="product-footer">
+            <span class="product-price">$75.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 5 -->
+      <div class="product-card" data-cat="audio">
+        <div class="product-img">🎧<span class="product-badge">Oferta</span></div>
+        <div class="product-info">
+          <h4>Auriculares Bluetooth</h4>
+          <div class="desc">TWS con cancelación de ruido activa</div>
+          <div class="product-footer">
+            <span class="product-price">$89.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 6 -->
+      <div class="product-card" data-cat="audio">
+        <div class="product-img">🎵</div>
+        <div class="product-info">
+          <h4>Audífonos Alámbricos</h4>
+          <div class="desc">Jack 3.5mm, bajos potentes HD</div>
+          <div class="product-footer">
+            <span class="product-price">$22.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 7 -->
+      <div class="product-card" data-cat="cables">
+        <div class="product-img">🔌</div>
+        <div class="product-info">
+          <h4>Cable USB-C 2m</h4>
+          <div class="desc">Carga rápida 100W, trenzado nylon</div>
+          <div class="product-footer">
+            <span class="product-price">$18.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PRODUCTO 8 -->
+      <div class="product-card" data-cat="fundas">
+        <div class="product-img">💻</div>
+        <div class="product-info">
+          <h4>Funda Laptop 15"</h4>
+          <div class="desc">Neopreno resistente al agua</div>
+          <div class="product-footer">
+            <span class="product-price">$35.000</span>
+            <button class="btn-buy">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     SECCIÓN UBICACIÓN
+     
+     Para cambiar:
+     · Dirección: edita el <span> dentro de "Dirección"
+     · Horario: edita el <span> dentro de "Horario de atención"
+     · Teléfono/WhatsApp: edita el <span> correspondiente
+     · Correo: edita el <span> del correo
+     · Link del mapa: cambia el href del botón "Cómo llegar"
+══════════════════════════════════════════════════════ -->
+<section id="ubicacion">
+  <div class="container">
+    <div class="location-wrap">
+
+      <!-- Columna izquierda: datos de contacto -->
+      <div class="location-info fade-in">
+        <div class="section-tag">Encuéntranos</div>
+        <h2>Visítanos en nuestro local</h2>
+
+        <!-- DIRECCIÓN -->
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-location-dot"></i></div>
+          <div class="info-text">
+            <strong>Dirección</strong>
+            <span>Diagonal 21 n.º 29-56, Barrio Sabanas del Valle.<br>Valledupar, Cesar</span>
+          </div>
+        </div>
+
+        <!-- HORARIO -->
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-clock"></i></div>
+          <div class="info-text">
+            <strong>Horario de atención</strong>
+            <span>Lunes a Viernes: 8:00 am – 7:00 pm<br>Sábados: 9:00 am – 5:00 pm</span>
+          </div>
+        </div>
+
+        <!-- TELÉFONO / WHATSAPP -->
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-phone"></i></div>
+          <div class="info-text">
+            <strong>Teléfono / WhatsApp</strong>
+            <span>+57 311 365 9462</span>
+          </div>
+        </div>
+
+        <!-- CORREO -->
+        <div class="info-item">
+          <div class="info-icon"><i class="fas fa-envelope"></i></div>
+          <div class="info-text">
+            <strong>Correo</strong>
+            <span>upcsystemvalledupar@unicesar.com</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Columna derecha: mapa -->
+      <div class="fade-in">
+        <div class="map-placeholder">
+          <i class="fas fa-map-location-dot"></i>
+          <p>Mapa interactivo<br><small>Valledupar, Cesar – Colombia</small></p>
+          <!-- LINK DEL MAPA — reemplaza el href con el link de Google Maps de tu local -->
+          <a href="https://maps.google.com" target="_blank" class="btn-primary" style="font-size:0.85rem; padding:0.6rem 1.4rem;">
+            <i class="fas fa-directions"></i> Cómo llegar
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════════════
+     FOOTER
+     Para cambiar el texto, edita directamente los elementos.
+══════════════════════════════════════════════════════ -->
+<footer>
+  <div class="footer-logo">Upc System Pro</div>                              <!-- NOMBRE EN EL FOOTER -->
+  <div class="footer-sub">Reparaciones & Accesorios – Valledupar, Cesar</div>  <!-- SUBTÍTULO FOOTER -->
+  <div class="footer-links">
+    <a href="#servicios">Servicios</a>
+    <a href="#tecnicos">Técnicos</a>
+    <a href="#catalogo">Catálogo</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="login.html">Iniciar Sesión</a>
+    <a href="register.html">Registrarse</a>
+  </div>
+  <div class="footer-copy">© 2025 Upc System Pro. Todos los derechos reservados.</div>  <!-- COPYRIGHT -->
+</footer>
+
+
+<!-- Scripts al final del body para mejor rendimiento -->
+<script src="js/global.js"></script>   <!-- Funciones compartidas (hamburger, fade-in) -->
+<script src="js/index.js"></script>    <!-- Funciones exclusivas de esta página (filtro de catálogo) -->
+
+</body>
+</html>

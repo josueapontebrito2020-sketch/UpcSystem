@@ -1,0 +1,303 @@
+/* ============================================================
+   ARCHIVO: global.css
+   USO: Estilos compartidos por TODAS las páginas del sitio.
+        Importado en todos los archivos HTML.
+   ============================================================ */
+
+
+/* ────────────────────────────────────────────────────────────
+   1. VARIABLES GLOBALES (COLORES Y TIPOGRAFÍA)
+   Aquí puedes cambiar los colores de TODO el sitio de una vez.
+   ──────────────────────────────────────────────────────────── */
+:root {
+  /* Color de fondo principal (el más oscuro) */
+  --bg: #0a0e1a;
+
+  /* Color de superficies (tarjetas, sidebars, etc.) */
+  --surface: #111827;
+
+  /* Color de superficies secundarias (inputs, fondos de tabla) */
+  --surface2: #1a2235;
+
+  /* Color de acento principal: el azul cian (botones, precios, íconos) */
+  --accent: #00d4ff;
+
+  /* Color de acento secundario: morado (gradientes, detalles) */
+  --accent2: #7c3aed;
+
+  /* Color del texto principal */
+  --text: #e8edf5;
+
+  /* Color del texto secundario / subtítulos / placeholders */
+  --muted: #8896ab;
+
+  /* Color de los bordes con transparencia */
+  --border: rgba(0, 212, 255, 0.15);
+
+  /* Color de tarjetas con transparencia (efecto vidrio) */
+  --card: rgba(26, 34, 53, 0.8);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   2. RESET GENERAL
+   Elimina márgenes y rellenos por defecto del navegador.
+   No tocar a menos que sepas lo que haces.
+   ──────────────────────────────────────────────────────────── */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  /* Hace que el scroll al hacer clic en los links del menú sea suave */
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+
+  /* Fuente principal del sitio — cámbiala aquí para cambiarla en todo el sitio */
+  font-family: 'DM Sans', sans-serif;
+
+  /* Evita scroll horizontal en móviles */
+  overflow-x: hidden;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   3. BARRA DE NAVEGACIÓN (NAV)
+   Presente en todas las páginas arriba.
+   ──────────────────────────────────────────────────────────── */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  /* Fondo oscuro semitransparente con efecto de desenfoque */
+  background: rgba(10, 14, 26, 0.85);
+  backdrop-filter: blur(12px);
+
+  border-bottom: 1px solid var(--border);
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  /* Alto de la barra de navegación — cámbialo aquí si quieres más o menos altura */
+  height: 68px;
+}
+
+/* Logo en la nav: "TechFix" en azul, "Pro" en blanco */
+.logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.4rem;
+  color: var(--accent); /* color azul de "TechFix" */
+  text-decoration: none;
+  letter-spacing: -0.5px;
+}
+.logo span {
+  color: var(--text); /* color blanco de "Pro" */
+}
+
+/* Botón hamburguesa — solo visible en móvil */
+.hamburger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 1.5rem;
+  display: none; /* Se muestra solo en pantallas pequeñas (ver responsive) */
+}
+
+/* Links del menú en escritorio */
+.nav-menu {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  align-items: center;
+}
+.nav-menu a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+  letter-spacing: 0.3px;
+}
+.nav-menu a:hover {
+  color: var(--accent);
+}
+
+/* Botón "Registrarse" en la nav (fondo azul) */
+.nav-menu .btn-nav {
+  background: var(--accent);
+  color: var(--bg) !important;
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  font-weight: 600;
+}
+.nav-menu .btn-nav:hover {
+  background: #00b8d9;
+}
+
+/* Menú desplegable en móvil */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: var(--surface);
+  padding: 1.5rem 2rem;
+  gap: 1.2rem;
+  border-bottom: 1px solid var(--border);
+  position: fixed;
+  top: 68px; /* debe coincidir con el alto del nav */
+  width: 100%;
+  z-index: 999;
+}
+.mobile-menu.open {
+  display: flex; /* Se abre al presionar el hamburger */
+}
+.mobile-menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+}
+.mobile-menu a:hover {
+  color: var(--accent);
+}
+
+/* Link "volver" en páginas internas (login, register) */
+.back-link {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+.back-link:hover {
+  color: var(--accent);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   4. BOTONES REUTILIZABLES
+   Usados en múltiples páginas.
+   ──────────────────────────────────────────────────────────── */
+
+/* Botón principal (fondo azul sólido) */
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+  display: inline-block;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 40px rgba(0, 212, 255, 0.5);
+}
+
+/* Botón secundario (solo borde, sin fondo) */
+.btn-outline {
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: border-color 0.2s, color 0.2s;
+  display: inline-block;
+}
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   5. ETIQUETAS Y TÍTULOS DE SECCIÓN
+   Los pequeños chips morados arriba de cada sección.
+   ──────────────────────────────────────────────────────────── */
+.section-tag {
+  display: inline-block;
+  background: rgba(124, 58, 237, 0.12);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+  color: #a78bfa;
+  font-size: 0.75rem;
+  padding: 0.3rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Título principal de cada sección (el H2 grande) */
+h2.section-title {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(1.8rem, 4vw, 2.8rem); /* tamaño responsivo automático */
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+}
+
+/* Párrafo descriptivo debajo del título de sección */
+.section-sub {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 500px;
+  line-height: 1.7;
+}
+
+/* Contenedor centrado con ancho máximo */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Espacio interno de cada sección */
+section {
+  padding: 6rem 2rem;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   6. ANIMACIÓN FADE-IN AL HACER SCROLL
+   Las tarjetas aparecen suavemente al bajar la página.
+   Controlado por IntersectionObserver en global.js
+   ──────────────────────────────────────────────────────────── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   7. ESTILOS RESPONSIVE (MÓVIL)
+   Ajustes cuando la pantalla es menor a 768px.
+   ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* Muestra el botón hamburguesa */
+  .hamburger { display: block; }
+
+  /* Oculta el menú horizontal */
+  .nav-menu { display: none; }
+}

@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- TÍTULO DE LA PESTAÑA -->
+  <title>Registrarse – Upc System</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/auth.css"/>
+  <link rel="stylesheet" href="css/register.css"/>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="logo">Upc <span>System</span> Pro</a>
+  <a href="login.html" class="back-link">
+    <i class="fas fa-arrow-left"></i> Ya tengo cuenta
+  </a>
+</nav>
+
+<main>
+  <div class="register-box">
+
+    <!-- ══════════════════════════════════════════════
+         Sección visible: el formulario de registro
+    ══════════════════════════════════════════════ -->
+    <div id="formContent">
+
+      <!-- Encabezado del formulario -->
+      <div class="form-header">
+        <div class="form-icon">👤</div>
+        <div class="form-title">Crear cuenta</div>   <!-- TÍTULO DEL FORMULARIO -->
+        <div class="form-sub">Regístrate para hacer seguimiento a tus reparaciones</div>
+      </div>
+
+      <!-- El onsubmit llama a handleRegister() en register.js -->
+      <form onsubmit="handleRegister(event)">
+        <div class="form-grid">
+
+          <!-- CAMPO: Nombre -->
+          <div class="form-group">
+            <label>Nombre</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Juan" required/>
+            </div>
+          </div>
+
+          <!-- CAMPO: Apellido -->
+          <div class="form-group">
+            <label>Apellido</label>
+            <div class="input-wrap">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Pérez" required/>
+            </div>
+          </div>
+
+          <!-- CAMPO: Correo (ocupa todo el ancho) -->
+          <div class="form-group full">
+            <label>Correo electrónico</label>
+            <div class="input-wrap">
+              <i class="fas fa-envelope"></i>
+              <input type="email" placeholder="tu@correo.com" required/>
+            </div>
+          </div>
+
+          <!-- CAMPO: Teléfono -->
+          <div class="form-group full">
+            <label>Número de teléfono</label>
+            <div class="input-wrap">
+              <i class="fas fa-phone"></i>
+              <input type="tel" placeholder="+57 310 123 4567"/>
+            </div>
+          </div>
+
+          <!-- CAMPO: Ciudad — agrega/quita opciones según necesites -->
+          <div class="form-group full">
+            <label>Ciudad</label>
+            <div class="input-wrap">
+              <select>
+                <option value="">Seleccionar ciudad</option>
+                <option selected>Valledupar</option>   <!-- CIUDAD POR DEFECTO -->
+                <option>Barranquilla</option>
+                <option>Bogotá</option>
+                <option>Medellín</option>
+                <option>Otra ciudad</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- CAMPO: Contraseña con indicador de seguridad
+               oninput="checkStrength(this.value)" llama a register.js -->
+          <div class="form-group full">
+            <label>Contraseña</label>
+            <div class="input-wrap">
+              <i class="fas fa-lock"></i>
+              <input type="password" id="passInput"
+                     placeholder="Mínimo 8 caracteres"
+                     required
+                     oninput="checkStrength(this.value)"/>
+            </div>
+            <!-- Barra de seguridad — controlada por checkStrength() en register.js -->
+            <div class="strength-bar">
+              <div class="strength-fill" id="strengthFill" style="width:0%"></div>
+            </div>
+            <div class="strength-label" id="strengthLabel">Ingresa una contraseña</div>
+          </div>
+
+          <!-- CAMPO: Confirmar contraseña -->
+          <div class="form-group full">
+            <label>Confirmar contraseña</label>
+            <div class="input-wrap">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Repite tu contraseña" required/>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Checkbox de términos y condiciones -->
+        <div class="terms">
+          <input type="checkbox" id="termsCheck" required/>
+          <label for="termsCheck" style="text-transform:none;letter-spacing:0;font-size:0.83rem;">
+            Acepto los <a href="#">Términos y Condiciones</a> y la
+            <a href="#">Política de Privacidad</a> de TechFix Pro.
+          </label>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn-submit">
+          <i class="fas fa-user-plus"></i> Crear cuenta gratis
+        </button>
+      </form>
+
+      <!-- Link al login -->
+      <div class="login-link">
+        ¿Ya tienes cuenta? <a href="login.html">Inicia sesión</a>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         Mensaje de éxito — oculto por defecto.
+         Se muestra automáticamente al enviar el formulario
+         (controlado por handleRegister() en register.js)
+    ══════════════════════════════════════════════ -->
+    <div class="success-msg" id="successMsg">
+      <div class="icon">🎉</div>
+      <h3>¡Cuenta creada!</h3>         <!-- MENSAJE DE ÉXITO -->
+      <p>Tu cuenta ha sido creada exitosamente. Ya puedes iniciar sesión y solicitar tus reparaciones.</p>
+      <a href="user.html" class="btn-submit"
+         style="display:inline-block;padding:0.8rem 2rem;text-decoration:none;border-radius:8px;">
+        Ir a mi panel →
+      </a>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/global.js"></script>    <!-- Funciones globales -->
+<script src="js/register.js"></script>  <!-- checkStrength() y handleRegister() -->
+
+</body>
+</html>

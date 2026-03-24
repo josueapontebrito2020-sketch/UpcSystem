@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mi Panel – Upc System</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/dashboard.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     TOPBAR DEL PANEL DE USUARIO
+     Para cambiar el nombre/avatar del usuario ve a:
+     · .avatar → iniciales del usuario (ej: "JP" = Juan Pérez)
+     · .user-name → nombre mostrado
+══════════════════════════════════════════════════════ -->
+<div class="topbar">
+  <div class="logo">Upc <span>System</span> Pro</div>
+  <div class="user-info">
+    <div class="avatar">CL</div>                          <!-- INICIALES DEL USUARIO -->
+    <span class="user-name">User Cliente</span>             <!-- NOMBRE DEL USUARIO -->
+    <button class="btn-logout" onclick="window.location.href='login.html'">
+      <i class="fas fa-sign-out-alt"></i> Salir
+    </button>
+  </div>
+</div>
+
+<div class="dashboard">
+
+  <!-- ══════════════════════════════════════════════════
+       SIDEBAR — MENÚ LATERAL
+       Para agregar un ítem: copia un .sidebar-item y cambia
+       el nombre de la página en showPage('nombre', this)
+       y crea la página correspondiente con id="page-nombre"
+  ══════════════════════════════════════════════════ -->
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Panel</div>
+
+      <!-- Ítem activo por defecto: showPage('dashboard', this) -->
+      <div class="sidebar-item active" onclick="showPage('dashboard', this)">
+        <i class="fas fa-house"></i> Inicio
+      </div>
+      <div class="sidebar-item" onclick="showPage('repairs', this)">
+        <i class="fas fa-wrench"></i> Mis reparaciones
+        <span class="badge">2</span>              <!-- NÚMERO DE REPARACIONES ACTIVAS -->
+      </div>
+      <div class="sidebar-item" onclick="showPage('chat', this)">
+        <i class="fas fa-comments"></i> Chat con técnico
+        <span class="badge">1</span>              <!-- NÚMERO DE MENSAJES SIN LEER -->
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Cuenta</div>
+      <div class="sidebar-item" onclick="showPage('profile', this)">
+        <i class="fas fa-user"></i> Mi perfil
+      </div>
+      <div class="sidebar-item" onclick="window.location.href='index.html#catalogo'">
+        <i class="fas fa-bag-shopping"></i> Tienda
+      </div>
+      <div class="sidebar-item" onclick="window.location.href='login.html'">
+        <i class="fas fa-arrow-right-from-bracket"></i> Cerrar sesión
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ÁREA DE CONTENIDO -->
+  <div class="content">
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: INICIO (dashboard)
+         Resumen con estadísticas y últimas reparaciones.
+         Para cambiar los números cambia los .value y .sub.
+    ══════════════════════════════════════════════ -->
+    <div class="page active" id="page-dashboard">
+      <div class="page-header">
+        <h1>¡Hola, Juan! 👋</h1>                   <!-- SALUDO — cambia el nombre -->
+        <p>Aquí está el resumen de tus reparaciones y servicios activos.</p>
+      </div>
+
+      <!-- Tarjetas de estadísticas -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="label">Total reparaciones</div>
+          <div class="value c-accent">3</div>       <!-- NÚMERO TOTAL -->
+          <div class="sub">Historial completo</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">En progreso</div>
+          <div class="value c-yellow">1</div>
+          <div class="sub">Dispositivos</Data></div>        <!-- DESCRIPCIÓN -->
+        </div>
+        <div class="stat-card">
+          <div class="label">Completadas</div>
+          <div class="value c-green">1</div>
+          <div class="sub">Dispositivos</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Mensajes nuevos</div>
+          <div class="value c-purple">3</div>
+          <div class="sub">Del técnico</div>
+        </div>
+      </div>
+
+      <!-- Lista rápida de reparaciones -->
+      <div class="repairs-section">
+        <div class="repairs-head">
+          <h3>Mis reparaciones</h3>
+          <span style="font-size:0.8rem;color:var(--muted);">Ver todo →</span>
+        </div>
+
+        <!-- REPARACIÓN 1 — Estado: En reparación (azul) -->
+        <div class="repair-item">
+          <div class="device-icon">📱</div>              <!-- EMOJI DEL DISPOSITIVO -->
+          <div class="device-info">
+            <h4>iPhone 14 Pro</h4>                       <!-- NOMBRE DEL DISPOSITIVO -->
+            <p>Pantalla rota – Técnico: Carlos M.</p>    <!-- PROBLEMA Y TÉCNICO -->
+          </div>
+          <div class="repair-date">hace 2 días</div>     <!-- FECHA -->
+          <span class="status-badge status-progress">En reparación</span>
+        </div>
+
+        <!-- REPARACIÓN 2 — Estado: Reparado (verde) -->
+        <div class="repair-item">
+          <div class="device-icon">💻</div>
+          <div class="device-info">
+            <h4>Laptop Dell Inspiron</h4>
+            <p>No enciende – Técnico: Laura R.</p>
+          </div>
+          <div class="repair-date">hace 1 semana</div>
+          <span class="status-badge status-done">✓ Reparado</span>
+        </div>
+
+        <!-- REPARACIÓN 3 — Estado: Pendiente (amarillo) -->
+        <div class="repair-item">
+          <div class="device-icon">🎮</div>
+          <div class="device-info">
+            <h4>PlayStation 5</h4>
+            <p>Lector de disco – Técnico: María G.</p>
+          </div>
+          <div class="repair-date">Hoy</div>
+          <span class="status-badge status-pending">Pendiente</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: MIS REPARACIONES
+         Historial completo de reparaciones del usuario.
+         Para agregar una fila: copia un .repair-item
+    ══════════════════════════════════════════════ -->
+    <div class="page" id="page-repairs">
+      <div class="page-header">
+        <h1>Mis Reparaciones</h1>
+        <p>Seguimiento detallado de todos tus dispositivos.</p>
+      </div>
+      <div class="repairs-section">
+        <div class="repairs-head"><h3>Historial completo</h3></div>
+
+        <div class="repair-item">
+          <div class="device-icon">📱</div>
+          <div class="device-info">
+            <h4>iPhone 14 Pro – Pantalla rota</h4>
+            <p>Técnico Carlos M. · Entrada: 21/01/2025</p>
+          </div>
+          <div class="repair-date">2 días restantes</div>
+          <span class="status-badge status-progress">En reparación</span>
+        </div>
+
+        <div class="repair-item">
+          <div class="device-icon">🎮</div>
+          <div class="device-info">
+            <h4>PlayStation 5 – Lector de disco</h4>
+            <p>Técnico María G. · Entrada: Hoy</p>
+          </div>
+          <div class="repair-date">Estimado: 5 días</div>
+          <span class="status-badge status-pending">Pendiente</span>
+        </div>
+
+        <div class="repair-item">
+          <div class="device-icon">💻</div>
+          <div class="device-info">
+            <h4>Laptop Dell – No enciende</h4>
+            <p>Técnico Laura R. · Entregado: 15/01/2025</p>
+          </div>
+          <div class="repair-date">hace 1 semana</div>
+          <span class="status-badge status-done">✓ Reparado</span>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: CHAT CON TÉCNICO
+         Para cambiar los técnicos disponibles edita los .chat-contact.
+         Para cambiar los mensajes iniciales edita los .msg dentro de #chatMessages.
+    ══════════════════════════════════════════════ -->
+    <div class="page" id="page-chat">
+      <div class="page-header">
+        <h1>Chat con Técnico</h1>
+        <p>Comunícate directamente con tu técnico asignado.</p>
+      </div>
+
+      <div class="chat-layout">
+
+        <!-- Lista de técnicos disponibles -->
+        <div class="chat-list">
+          <div class="chat-list-head">Conversaciones</div>
+
+          <!-- CONTACTO 1 (activo) -->
+          <div class="chat-contact active">
+            <div class="contact-avatar">CM</div>          <!-- INICIALES DEL TÉCNICO -->
+            <div class="contact-info">
+              <h4>Carlos Mendoza</h4>                     <!-- NOMBRE DEL TÉCNICO -->
+              <p>Tu iPhone 14 está lista para...</p>      <!-- ÚLTIMO MENSAJE -->
+            </div>
+            <div class="online-dot"></div>                <!-- PUNTO VERDE = EN LÍNEA -->
+          </div>
+
+          <!-- CONTACTO 2 -->
+          <div class="chat-contact">
+            <div class="contact-avatar">LR</div>
+            <div class="contact-info">
+              <h4>Laura Ríos</h4>
+              <p>¡Laptop entregada con éxito!</p>
+            </div>
+          </div>
+
+          <!-- CONTACTO 3 -->
+          <div class="chat-contact">
+            <div class="contact-avatar">MG</div>
+            <div class="contact-info">
+              <h4>María Gómez</h4>
+              <p>Recibimos tu PS5, pronto...</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Ventana de chat activa -->
+        <div class="chat-window">
+          <div class="chat-header">
+            <div class="contact-avatar">CM</div>
+            <div>
+              <h3>Carlos Mendoza</h3>
+              <p>● En línea ahora</p>
+            </div>
+          </div>
+
+          <!-- Historial de mensajes -->
+          <!-- msg.received = mensaje del técnico | msg.sent = mensaje del usuario -->
+          <div class="chat-messages" id="chatMessages">
+
+            <div>
+              <div class="msg received">¡Hola Juan! Ya recibimos tu iPhone 14 Pro. Vamos a revisar la pantalla y te damos un presupuesto hoy.</div>
+              <div class="msg-time">10:23 am</div>
+            </div>
+            <div>
+              <div class="msg sent">¡Gracias Carlos! ¿Cuánto tiempo puede tomar la reparación?</div>
+              <div class="msg-time">10:35 am · ✓✓</div>
+            </div>
+            <div>
+              <div class="msg received">Aproximadamente 2 días. La pantalla original tarda en llegar. Te aviso cuando esté lista. 🔧</div>
+              <div class="msg-time">10:38 am</div>
+            </div>
+            <div>
+              <div class="msg sent">Perfecto. ¿Tiene garantía la reparación?</div>
+              <div class="msg-time">10:42 am · ✓✓</div>
+            </div>
+            <div>
+              <div class="msg received">¡Sí! Todas nuestras reparaciones tienen 6 meses de garantía. 😊</div>
+              <div class="msg-time">10:44 am</div>
+            </div>
+
+          </div>
+
+          <!-- Caja de texto para escribir — onkeydown="Enter" llama sendMsg() en user.js -->
+          <div class="chat-input">
+            <input type="text" id="msgInput"
+                   placeholder="Escribe un mensaje..."
+                   onkeydown="if(event.key==='Enter') sendMsg()"/>
+            <button class="btn-send" onclick="sendMsg()">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: MI PERFIL
+         Para cambiar los datos del usuario edita los textos
+         dentro de cada sección de información.
+    ══════════════════════════════════════════════ -->
+    <div class="page" id="page-profile">
+      <div class="page-header">
+        <h1>Mi Perfil</h1>
+        <p>Administra tu información personal.</p>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:2rem;max-width:540px;">
+        <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:2rem;">
+          <div style="width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;font-size:1.6rem;font-weight:700;">
+            JP  <!-- INICIALES DEL USUARIO -->
+          </div>
+          <div>
+            <div style="font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;">Juan Pérez</div>  <!-- NOMBRE COMPLETO -->
+            <div style="color:var(--muted);font-size:0.85rem;">Cliente desde enero 2025</div>
+          </div>
+        </div>
+        <div style="display:grid;gap:1rem;">
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;margin-bottom:0.3rem;">Correo</div>
+            <div>juan.perez@email.com</div>    <!-- CORREO DEL USUARIO -->
+          </div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;margin-bottom:0.3rem;">Teléfono</div>
+            <div>+57 310 456 7890</div>        <!-- TELÉFONO DEL USUARIO -->
+          </div>
+          <div>
+            <div style="font-size:0.75rem;color:var(--muted);font-weight:600;text-transform:uppercase;margin-bottom:0.3rem;">Ciudad</div>
+            <div>Valledupar, Cesar</div>       <!-- CIUDAD DEL USUARIO -->
+          </div>
+        </div>
+        <button style="margin-top:1.5rem;background:var(--accent);color:var(--bg);border:none;padding:0.75rem 1.8rem;border-radius:8px;font-weight:700;cursor:pointer;">
+          Editar perfil
+        </button>
+      </div>
+    </div>
+
+  </div><!-- fin .content -->
+</div><!-- fin .dashboard -->
+
+<script src="js/global.js"></script>  <!-- Funciones globales -->
+<script src="js/user.js"></script>    <!-- showPage() y sendMsg() -->
+
+</body>
+</html>
