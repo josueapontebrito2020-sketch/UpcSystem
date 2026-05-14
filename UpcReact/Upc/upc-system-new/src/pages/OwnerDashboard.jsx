@@ -6,97 +6,93 @@ import '../styles/owner.css';
 import apiClient from '../api/apiClient';
 
 const OwnerDashboard = () => {
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('overview');
-  const [reparaciones, setReparaciones] = useState([]);
-  const [mensajes, setMensajes] = useState([]);
-  const [reparacionActiva, setReparacionActiva] = useState(null);
-  const [message, setMessage] = useState('');
-  const [stats, setStats] = useState(null);
-  const chatEndRef = useRef(null);
+  const navigate = useNavigate(); // Permite redirigir a otra página
+  const [activeTab, setActiveTab] = useState('overview'); // Guarda qué pestaña está activa (overview, repairs, chats)
+  const [reparaciones, setReparaciones] = useState([]);   // Guarda todas las reparaciones que vienen de la API
+  const [mensajes, setMensajes] = useState([]);           // Guarda los mensajes del chat activo
+  const [reparacionActiva, setReparacionActiva] = useState(null); // Guarda la reparación seleccionada en el chat
+  const [message, setMessage] = useState('');  // Guarda el texto que el técnico está escribiendo
+  const [stats, setStats] = useState(null);    // Guarda las estadísticas del panel (totales, completadas, etc.)
+  const chatEndRef = useRef(null); // Referencia al final del chat para hacer scroll automático
 
-  const usuario = JSON.parse(localStorage.getItem('user')) || {};
-  const iniciales = `${(usuario.nombre || 'A')[0]}`.toUpperCase();
+  const usuario = JSON.parse(localStorage.getItem('user')) || {}; // Lee los datos del propietario guardados en localStorage al hacer login
+  const iniciales = `${(usuario.nombre || 'A')[0]}`.toUpperCase(); // Toma la primera letra del nombre para el avatar
 
   const avatarColor = (() => {
     const colores = ['#6c63ff', '#00c896', '#ff6b6b', '#ffd93d', '#4ecdc4', '#a29bfe'];
-    const index = (usuario.nombre || 'A').charCodeAt(0) % colores.length;
+    const index = (usuario.nombre || 'A').charCodeAt(0) % colores.length; // Elige un color según la primera letra del nombre
     return colores[index];
   })();
 
-  // ✅ Polling de stats cada 5 segundos para reflejar nuevos clientes
-useEffect(() => {
-    // ✅ Solo hace polling de stats en el tab overview
-    if (activeTab !== 'overview') return;
+  useEffect(() => {
+    if (activeTab !== 'overview') return; // Solo corre si estás en la pestaña overview
     const fetchStats = () =>
-      apiClient.get('stats')
+      apiClient.get('stats') // GET api/stats → trae totales de reparaciones, clientes, completadas
         .then(data => setStats(data))
         .catch(err => console.error(err));
-    fetchStats();
-    const interval = setInterval(fetchStats, 5000);
-    return () => clearInterval(interval);
-  }, [activeTab]);
+    fetchStats(); // Llama inmediatamente al cargar
+    const interval = setInterval(fetchStats, 5000); // Repite cada 5 segundos para mantener los datos actualizados
+    return () => clearInterval(interval); // Limpia el intervalo cuando cambia de pestaña
+  }, [activeTab]); // Se re-ejecuta cada vez que cambia la pestaña activa
 
-useEffect(() => {
-    // ✅ Solo hace polling de reparaciones en los tabs que las necesitan
-    if (!['overview', 'repairs', 'chats'].includes(activeTab)) return;
+  useEffect(() => {
+    if (!['overview', 'repairs', 'chats'].includes(activeTab)) return; // Solo corre en estas 3 pestañas
     const fetchReparaciones = () =>
-      apiClient.get('reparaciones/todas')
+      apiClient.get('reparaciones/todas') // GET api/reparaciones/todas → trae TODAS las reparaciones con nombre del cliente
         .then(data => {
-          setReparaciones(data);
+          setReparaciones(data); // Guarda todas las reparaciones en el estado
           setReparacionActiva(prev => {
-            if (prev) return data.find(r => r.id === prev.id) ?? prev;
-            return data[0] ?? null;
+            if (prev) return data.find(r => r.id === prev.id) ?? prev; // Si ya había una activa, la actualiza con los datos nuevos
+            return data[0] ?? null; // Si no había ninguna, selecciona la primera
           });
         })
         .catch(err => console.error(err));
-    fetchReparaciones();
-    const interval = setInterval(fetchReparaciones, 5000);
-    return () => clearInterval(interval);
-  }, [activeTab]);
-
-useEffect(() => {
-    // ✅ Solo hace polling si estás en el tab chats y hay una reparación activa
-    if (!reparacionActiva || activeTab !== 'chats') return;
-    const fetchMensajes = () =>
-      apiClient.get(`mensajes?usuarioId=${reparacionActiva.usuarioId}`)
-        .then(msgs => setMensajes(msgs.filter(m => m.reparacionId === reparacionActiva.id)));
-    fetchMensajes();
-    const interval = setInterval(fetchMensajes, 3000);
-    return () => clearInterval(interval);
-  }, [reparacionActiva, activeTab]); // ✅ agrega activeTab como dependencia
+    fetchReparaciones(); // Llama inmediatamente al cargar
+    const interval = setInterval(fetchReparaciones, 5000); // Repite cada 5 segundos
+    return () => clearInterval(interval); // Limpia el intervalo al cambiar de pestaña
+  }, [activeTab]); // Se re-ejecuta cada vez que cambia la pestaña activa
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [mensajes]);
+    if (!reparacionActiva || activeTab !== 'chats') return; // Solo corre si hay reparación activa Y estás en la pestaña chats
+    const fetchMensajes = () =>
+      apiClient.get(`mensajes?usuarioId=${reparacionActiva.usuarioId}`) // GET api/mensajes?usuarioId=X → trae mensajes del cliente
+        .then(msgs => setMensajes(msgs.filter(m => m.reparacionId === reparacionActiva.id))); // Filtra solo los mensajes de esta reparación
+    fetchMensajes(); // Llama inmediatamente
+    const interval = setInterval(fetchMensajes, 3000); // Repite cada 3 segundos para el chat en tiempo real
+    return () => clearInterval(interval); // Limpia el intervalo al cambiar de reparación o pestaña
+  }, [reparacionActiva, activeTab]); // Se re-ejecuta si cambia la reparación activa o la pestaña
+
+  useEffect(() => {
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }); // Cada vez que llegan mensajes nuevos hace scroll al final del chat
+  }, [mensajes]); // Se ejecuta cada vez que el array de mensajes cambia
 
   const handleCambiarEstado = (id, nuevoEstado) => {
-    apiClient.patch(`reparaciones/${id}/estado`, nuevoEstado)
+    apiClient.patch(`reparaciones/${id}/estado`, nuevoEstado) // PATCH api/reparaciones/{id}/estado → actualiza el estado de la reparación
       .then(repActualizada => {
-        setReparaciones(prev => prev.map(r => r.id === id ? repActualizada : r));
-        apiClient.get('stats').then(data => setStats(data));
+        setReparaciones(prev => prev.map(r => r.id === id ? repActualizada : r)); // Reemplaza solo la reparación actualizada en el estado local
+        apiClient.get('stats').then(data => setStats(data)); // Refresca las stats porque cambió una reparación
       })
       .catch(err => console.error('Error cambiando estado:', err));
   };
 
   const handleSendMessage = () => {
-    if (!message.trim() || !reparacionActiva) return;
+    if (!message.trim() || !reparacionActiva) return; // No envía si el mensaje está vacío o no hay reparación activa
     const texto = message;
-    setMessage('');
-    apiClient.post('mensajes', {
-      reparacionId: reparacionActiva.id,
-      usuarioId: reparacionActiva.usuarioId,
-      autor: 'tecnico',
-      texto
+    setMessage(''); // Limpia el input inmediatamente antes de esperar respuesta de la API
+    apiClient.post('mensajes', { // POST api/mensajes → guarda el mensaje en la BD
+      reparacionId: reparacionActiva.id, // ID de la reparación a la que pertenece el mensaje
+      usuarioId: reparacionActiva.usuarioId, // ID del cliente dueño de la reparación
+      autor: 'tecnico', // Identifica que este mensaje lo envió el técnico, no el cliente
+      texto // El contenido del mensaje
     }).then(nuevoMensaje => {
-      setMensajes(prev => [...prev, nuevoMensaje]);
+      setMensajes(prev => [...prev, nuevoMensaje]); // Agrega el mensaje nuevo al chat sin recargar todos
     }).catch(err => console.error('Error enviando mensaje:', err));
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    navigate('/login');
+    localStorage.removeItem('user');  // Borra los datos del usuario del localStorage
+    localStorage.removeItem('token'); // Borra el token de autenticación del localStorage
+    navigate('/login'); // Redirige al login
   };
 
   return (

@@ -6,87 +6,87 @@ import '../styles/register.css';
 import apiClient from '../api/apiClient';
 
 const Register = () => {
-  const navigate = useNavigate();
-  const [showSuccess, setShowSuccess] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
-  const [strength, setStrength] = useState({ width: '0%', color: '#eee', label: 'Ingresa una contraseña' });
+  const navigate = useNavigate(); // Permite redirigir al usuario a otra página
+  const [showSuccess, setShowSuccess] = useState(false); // Controla si muestra el formulario o la pantalla de éxito
+  const [loading, setLoading] = useState(false);         // Controla si el botón muestra "Creando cuenta..."
+  const [error, setError] = useState('');                // Guarda el mensaje de error si el registro falla
+  const [strength, setStrength] = useState({ width: '0%', color: '#eee', label: 'Ingresa una contraseña' }); // Controla la barra de seguridad de la contraseña
 
-  // Estado del formulario
-  const [form, setForm] = useState({
+  const [form, setForm] = useState({  // Guarda todos los campos del formulario en un solo objeto
     nombre: '',
     apellido: '',
     email: '',
     telefono: '',
-    ciudad: 'Valledupar',
+    ciudad: 'Valledupar', // Ciudad por defecto
     password: '',
-    confirmar: ''
+    confirmar: ''         // Este campo NO se envía a la API, solo sirve para validar localmente
   });
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-    if (e.target.name === 'password') handlePasswordInput(e.target.value);
+    setForm({ ...form, [e.target.name]: e.target.value }); // Actualiza solo el campo que cambió, mantiene los demás igual
+    if (e.target.name === 'password') handlePasswordInput(e.target.value); // Si el campo es password, actualiza la barra de seguridad
   };
 
-  const handlePasswordInput = (value) => {
+  const handlePasswordInput = (value) => { // Calcula la seguridad de la contraseña según su longitud
     if (value.length === 0) {
-      setStrength({ width: '0%', color: '#eee', label: 'Ingresa una contraseña' });
+      setStrength({ width: '0%', color: '#eee', label: 'Ingresa una contraseña' }); // Sin contraseña
     } else if (value.length < 5) {
-      setStrength({ width: '30%', color: '#ff4d4d', label: 'Débil' });
+      setStrength({ width: '30%', color: '#ff4d4d', label: 'Débil' });   // Menos de 5 caracteres → débil
     } else if (value.length < 8) {
-      setStrength({ width: '60%', color: '#ffd11a', label: 'Media' });
+      setStrength({ width: '60%', color: '#ffd11a', label: 'Media' });   // Entre 5 y 7 caracteres → media
     } else {
-      setStrength({ width: '100%', color: '#00cc66', label: 'Fuerte' });
+      setStrength({ width: '100%', color: '#00cc66', label: 'Fuerte' }); // 8 o más caracteres → fuerte
     }
   };
 
   const handleRegister = async (event) => {
-  event.preventDefault();
-  setError('');
+    event.preventDefault(); // Evita que el formulario recargue la página
+    setError(''); // Limpia errores anteriores
 
-  if (form.password !== form.confirmar) {
-    setError('Las contraseñas no coinciden');
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    const data = await apiClient.post('auth/register', { // 👈 usa apiClient (lleva x-api-key)
-      nombre: form.nombre,
-      apellido: form.apellido,
-      email: form.email,
-      telefono: form.telefono,
-      ciudad: form.ciudad,
-      password: form.password
-    });
-
-    if (data.mensaje && !data.token) {
-      setError(data.mensaje);
-      return;
+    if (form.password !== form.confirmar) { // Valida localmente que las contraseñas coincidan ANTES de llamar a la API
+      setError('Las contraseñas no coinciden');
+      return; // Corta aquí, no llama a la API
     }
 
-    const usuario = {
-      id: data.Id ?? data.id,
-      nombre: data.Nombre ?? data.nombre,
-      apellido: data.Apellido ?? data.apellido,
-      email: data.Email ?? data.email,
-      role: data.Role ?? data.role,
-      telefono: form.telefono,
-      ciudad: form.ciudad,
-      token: data.token
-    };
+    setLoading(true); // Activa estado de carga
 
-    localStorage.setItem('user', JSON.stringify(usuario)); // 👈 'user' consistente con authService
-    localStorage.setItem('token', data.token);             // 👈 también guarda el token suelto
-    setShowSuccess(true);
+    try {
+      const data = await apiClient.post('auth/register', { // POST api/auth/register → crea el usuario en la BD
+        nombre: form.nombre,
+        apellido: form.apellido,
+        email: form.email,
+        telefono: form.telefono,
+        ciudad: form.ciudad,
+        password: form.password
+        // ⚠️ 'confirmar' NO se envía a la API, solo se usó para validar localmente
+      });
 
-  } catch (err) {
-    setError('No se pudo conectar con el servidor');
-  } finally {
-    setLoading(false);
-  }
-};
+      if (data.mensaje && !data.token) { // Si la API devuelve un mensaje pero no un token significa que hubo error (ej: correo ya registrado)
+        setError(data.mensaje); // Muestra el error que mandó la API
+        return;
+      }
+
+      const usuario = { // Construye el objeto usuario con la respuesta de la API
+        id: data.Id ?? data.id,           // ?? = si el primero es null/undefined usa el segundo (maneja mayúsculas y minúsculas)
+        nombre: data.Nombre ?? data.nombre,
+        apellido: data.Apellido ?? data.apellido,
+        email: data.Email ?? data.email,
+        role: data.Role ?? data.role,
+        telefono: form.telefono, // Estos dos vienen del form porque la API no los devuelve
+        ciudad: form.ciudad,
+        token: data.token
+      };
+
+      localStorage.setItem('user', JSON.stringify(usuario)); // Guarda el usuario en localStorage para que toda la app lo pueda leer
+      localStorage.setItem('token', data.token);             // Guarda el token suelto para que apiClient lo incluya en las siguientes peticiones
+      setShowSuccess(true); // Cambia la vista al mensaje de éxito
+
+    } catch (err) {
+      setError('No se pudo conectar con el servidor'); // Error de red, la API no respondió
+    } finally {
+      setLoading(false); // Siempre desactiva el estado de carga, haya error o no
+    }
+  };
 
   return (
     <div className="auth-page">

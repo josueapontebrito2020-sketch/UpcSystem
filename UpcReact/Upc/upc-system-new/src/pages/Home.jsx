@@ -9,40 +9,45 @@ import '../styles/index.css';
 import apiClient from '../api/apiClient'; // 👈
 
 const Home = () => {
-  const [categoriaActiva, setCategoriaActiva] = useState('todos');
-  const [servicios, setServicios] = useState([]);
-  const [tecnicos, setTecnicos] = useState([]);
-  const [accesorios, setAccesorios] = useState([]);
+  const [categoriaActiva, setCategoriaActiva] = useState('todos'); // Guarda qué categoría de accesorio está seleccionada
+  const [servicios, setServicios] = useState([]);   // Guarda los servicios que vienen de la API
+  const [tecnicos, setTecnicos] = useState([]);     // Guarda los técnicos que vienen de la API
+  const [accesorios, setAccesorios] = useState([]); // Guarda los accesorios que vienen de la API
 
-  useEffect(() => {
-    apiClient.get('servicios')  // 👈
-      .then(data => setServicios(data))
-      .catch(err => console.error('Error servicios:', err));
+  useEffect(() => { 
 
-    apiClient.get('tecnicos')   // 👈
-      .then(data => setTecnicos(data))
+    apiClient.get('servicios')  // GET api/servicios → trae todos los servicios de la BD
+      .then(data => setServicios(data)) // Guarda los servicios en el estado
+      .catch(err => console.error('Error servicios:', err)); // Si falla muestra el error en consola
+
+    apiClient.get('tecnicos')   // GET api/tecnicos → trae todos los técnicos de la BD
+      .then(data => setTecnicos(data)) // Guarda los técnicos en el estado
       .catch(err => console.error('Error tecnicos:', err));
 
-    apiClient.get('accesorios') // 👈
-      .then(data => setAccesorios(data))
+    apiClient.get('accesorios') // GET api/accesorios → trae todos los accesorios de la BD
+      .then(data => setAccesorios(data)) // Guarda los accesorios en el estado
       .catch(err => console.error('Error accesorios:', err));
-  }, []);
 
+  }, []); 
+
+  // Si la categoría activa es 'todos' muestra todos los accesorios
+  // Si no, filtra solo los que coincidan con la categoría seleccionada (ej: 'fundas')
+  // NO hace otra llamada a la API, filtra lo que ya está en el estado
   const productosFiltrados = categoriaActiva === 'todos'
     ? accesorios
     : accesorios.filter(p => p.categoria === categoriaActiva);
 
-  useEffect(() => {
+  useEffect(() => { // Se vuelve a ejecutar cada vez que el usuario cambia de categoría
     const fadeObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('visible');
+        if (entry.isIntersecting) entry.target.classList.add('visible'); // Agrega clase 'visible' cuando el elemento entra en pantalla
       });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1 }); // El elemento debe ser 10% visible para activarse
 
-    const elements = document.querySelectorAll('.fade-in');
-    elements.forEach(el => fadeObserver.observe(el));
-    return () => fadeObserver.disconnect();
-  }, [categoriaActiva]);
+    const elements = document.querySelectorAll('.fade-in'); // Selecciona todos los elementos con clase fade-in
+    elements.forEach(el => fadeObserver.observe(el)); // Le dice al observer que vigile cada elemento
+    return () => fadeObserver.disconnect(); // Limpia el observer cuando el componente se desmonta o cambia categoría
+  }, [categoriaActiva]); // [categoriaActiva] = se vuelve a ejecutar cada vez que cambia la categoría
 
   return (
     <div className="home-container">

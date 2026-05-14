@@ -5,121 +5,113 @@ import '../styles/dashboard.css';
 import apiClient from '../api/apiClient';
 
 const UserDashboard = () => {
-  const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState('dashboard');
-  const [message, setMessage] = useState('');
-  const [reparaciones, setReparaciones] = useState([]);
-  const [mensajes, setMensajes] = useState([]);
-  const [reparacionActiva, setReparacionActiva] = useState(null);
-  const [tecnicos, setTecnicos] = useState([]);
-  const chatEndRef = useRef(null);
+  const navigate = useNavigate(); // Permite redirigir al usuario a otra página
+  const [activeTab, setActiveTab] = useState('dashboard'); // Guarda qué pestaña está activa (dashboard, repairs, chat, profile)
+  const [message, setMessage] = useState('');              // Guarda el texto que el cliente está escribiendo en el chat
+  const [reparaciones, setReparaciones] = useState([]);   // Guarda las reparaciones del usuario que vienen de la API
+  const [mensajes, setMensajes] = useState([]);            // Guarda todos los mensajes del usuario
+  const [reparacionActiva, setReparacionActiva] = useState(null); // Guarda la reparación seleccionada en el chat
+  const [tecnicos, setTecnicos] = useState([]);            // Guarda los técnicos disponibles para el selector del modal
+  const chatEndRef = useRef(null); // Referencia al final del chat para hacer scroll automático
 
-  // ── Modal nueva reparación ──
-  const [showModal, setShowModal] = useState(false);
-  const [loadingRep, setLoadingRep] = useState(false);
-  const [formRep, setFormRep] = useState({ dispositivo: '', problema: '', tecnico: '' });
+  const [showModal, setShowModal] = useState(false);    // Controla si el modal de nueva reparación está visible
+  const [loadingRep, setLoadingRep] = useState(false);  // Controla si el botón del modal muestra "Enviando..."
+  const [formRep, setFormRep] = useState({ dispositivo: '', problema: '', tecnico: '' }); // Guarda los campos del modal de nueva reparación
 
-  const usuario = JSON.parse(localStorage.getItem('user')) || {};
-  const nombreCompleto = `${usuario.nombre || ''} ${usuario.apellido || ''}`.trim();
-  const iniciales = `${(usuario.nombre || 'U')[0]}${(usuario.apellido || '')[0] || ''}`.toUpperCase();
+  const usuario = JSON.parse(localStorage.getItem('user')) || {}; // Lee los datos del cliente guardados en localStorage al hacer login
+  const nombreCompleto = `${usuario.nombre || ''} ${usuario.apellido || ''}`.trim(); // Arma el nombre completo para mostrarlo en pantalla
+  const iniciales = `${(usuario.nombre || 'U')[0]}${(usuario.apellido || '')[0] || ''}`.toUpperCase(); // Toma las iniciales del nombre y apellido para el avatar
 
   const avatarColor = (() => {
     const colores = ['#6c63ff', '#00c896', '#ff6b6b', '#ffd93d', '#4ecdc4', '#a29bfe'];
-    const index = (usuario.nombre || 'U').charCodeAt(0) % colores.length;
+    const index = (usuario.nombre || 'U').charCodeAt(0) % colores.length; // Elige un color según la primera letra del nombre
     return colores[index];
   })();
 
-  // Cargar reparaciones del usuario
-const fetchReparaciones = () => {
-  if (usuario.id) {
-    apiClient.get(`reparaciones?usuarioId=${usuario.id}`)
-      .then(data => {
-        setReparaciones(data);
-        setReparacionActiva(prev =>
-          prev ? (data.find(r => r.id === prev.id) ?? prev) : (data[0] ?? null)
-        );
-      })
-      .catch(err => console.error(err));
-  }
-};
+  const fetchReparaciones = () => {
+    if (usuario.id) { // Solo llama a la API si hay un usuario logueado
+      apiClient.get(`reparaciones?usuarioId=${usuario.id}`) // GET api/reparaciones?usuarioId=X → trae SOLO las reparaciones de este usuario
+        .then(data => {
+          setReparaciones(data); // Guarda las reparaciones en el estado
+          setReparacionActiva(prev =>
+            prev ? (data.find(r => r.id === prev.id) ?? prev) : (data[0] ?? null) // Si ya había una activa la actualiza, si no selecciona la primera
+          );
+        })
+        .catch(err => console.error(err));
+    }
+  };
 
-  useEffect(() => { fetchReparaciones(); }, []);
+  useEffect(() => { fetchReparaciones(); }, []); // Carga las reparaciones UNA sola vez al montar el componente
 
-  // Cargar técnicos para el selector del modal
   useEffect(() => {
-    apiClient.get('tecnicos')
+    apiClient.get('tecnicos') // GET api/tecnicos → trae los técnicos para el selector del modal
       .then(data => {
-        setTecnicos(data);
-        if (data.length > 0) setFormRep(prev => ({ ...prev, tecnico: data[0].nombre }));
+        setTecnicos(data); // Guarda los técnicos en el estado
+        if (data.length > 0) setFormRep(prev => ({ ...prev, tecnico: data[0].nombre })); // Preselecciona el primer técnico en el modal
       })
       .catch(err => console.error(err));
-  }, []);
+  }, []); // Solo se ejecuta UNA vez al montar el componente
 
-  // Polling de mensajes
-useEffect(() => {
-    // ✅ Solo hace polling si estás en el tab chat
-    if (!usuario.id || activeTab !== 'chat') return;
+  useEffect(() => {
+    if (!usuario.id || activeTab !== 'chat') return; // Solo hace polling si hay usuario logueado Y estás en la pestaña chat
     const fetchMensajes = () =>
-      apiClient.get(`mensajes?usuarioId=${usuario.id}`)
+      apiClient.get(`mensajes?usuarioId=${usuario.id}`) // GET api/mensajes?usuarioId=X → trae todos los mensajes del usuario
         .then(msgs => setMensajes(msgs));
-    fetchMensajes();
-    const interval = setInterval(fetchMensajes, 3000);
-    return () => clearInterval(interval);
-  }, [activeTab]); // ✅ agrega activeTab como dependencia
+    fetchMensajes(); // Llama inmediatamente al entrar al chat
+    const interval = setInterval(fetchMensajes, 3000); // Repite cada 3 segundos para el chat en tiempo real
+    return () => clearInterval(interval); // Limpia el intervalo al salir de la pestaña chat
+  }, [activeTab]); // Se re-ejecuta cada vez que cambia la pestaña activa
 
   useEffect(() => {
-    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-  }, [mensajes]);
+    chatEndRef.current?.scrollIntoView({ behavior: 'smooth' }); // Hace scroll al final del chat cada vez que llegan mensajes nuevos
+  }, [mensajes]); // Se ejecuta cada vez que el array de mensajes cambia
 
-  const enProgreso  = reparaciones.filter(r => r.estado === 'En reparación').length;
-  const completadas = reparaciones.filter(r => r.estado === 'Completado').length;
+  const enProgreso  = reparaciones.filter(r => r.estado === 'En reparación').length; // Cuenta las reparaciones activas (sin llamar a la API, filtra el estado local)
+  const completadas = reparaciones.filter(r => r.estado === 'Completado').length;    // Cuenta las reparaciones completadas (sin llamar a la API)
   const mensajesActivos = reparacionActiva
-    ? mensajes.filter(m => m.reparacionId === reparacionActiva.id)
+    ? mensajes.filter(m => m.reparacionId === reparacionActiva.id) // Filtra solo los mensajes de la reparación seleccionada en el chat
     : [];
-  const mensajesTecnico = mensajes.filter(m => m.autor === 'tecnico').length;
+  const mensajesTecnico = mensajes.filter(m => m.autor === 'tecnico').length; // Cuenta cuántos mensajes ha enviado el técnico (para el badge del sidebar)
 
-  // ── Enviar mensaje del chat ──
   const handleSendMessage = () => {
-    if (!message.trim() || !reparacionActiva) return;
+    if (!message.trim() || !reparacionActiva) return; // No envía si el mensaje está vacío o no hay reparación activa
     const texto = message;
-    setMessage('');
-    apiClient.post('mensajes', {
-      reparacionId: reparacionActiva.id,
-      usuarioId: usuario.id,
-      autor: 'cliente',
+    setMessage(''); // Limpia el input inmediatamente antes de esperar respuesta de la API
+    apiClient.post('mensajes', { // POST api/mensajes → guarda el mensaje en la BD
+      reparacionId: reparacionActiva.id, // ID de la reparación a la que pertenece el mensaje
+      usuarioId: usuario.id,             // ID del cliente que envía el mensaje
+      autor: 'cliente',                  // Identifica que este mensaje lo envió el cliente, no el técnico
       texto
     }).then(nuevoMensaje => {
-      setMensajes(prev => [...prev, nuevoMensaje]);
+      setMensajes(prev => [...prev, nuevoMensaje]); // Agrega el mensaje nuevo al chat sin recargar todos
     }).catch(err => console.error('Error enviando mensaje:', err));
   };
 
-  // ── Crear nueva reparación ──
   const handleCrearReparacion = async () => {
-    if (!formRep.dispositivo.trim() || !formRep.problema.trim() || !formRep.tecnico) return;
-    setLoadingRep(true);
+    if (!formRep.dispositivo.trim() || !formRep.problema.trim() || !formRep.tecnico) return; // Valida que todos los campos del modal estén llenos
+    setLoadingRep(true); // Activa estado de carga en el botón del modal
     try {
-      const nueva = await apiClient.post('reparaciones', {
-        usuarioId: usuario.id,
-        dispositivo: formRep.dispositivo,
-        problema: formRep.problema,
-        tecnico: formRep.tecnico,
+      const nueva = await apiClient.post('reparaciones', { // POST api/reparaciones → crea la reparación en la BD
+        usuarioId: usuario.id,           // ID del cliente dueño de la reparación
+        dispositivo: formRep.dispositivo, // Modelo del dispositivo
+        problema: formRep.problema,       // Descripción del problema
+        tecnico: formRep.tecnico,         // Técnico seleccionado en el modal
       });
-      // Agregar al estado local y actualizar reparación activa para el chat
-      setReparaciones(prev => [...prev, nueva]);
-      setReparacionActiva(nueva);
-      setShowModal(false);
-      setFormRep({ dispositivo: '', problema: '', tecnico: tecnicos[0]?.nombre || '' });
+      setReparaciones(prev => [...prev, nueva]); // Agrega la nueva reparación al estado local sin recargar todas
+      setReparacionActiva(nueva);  // Selecciona la nueva reparación como activa en el chat
+      setShowModal(false);         // Cierra el modal
+      setFormRep({ dispositivo: '', problema: '', tecnico: tecnicos[0]?.nombre || '' }); // Limpia el formulario del modal
     } catch (err) {
       console.error('Error creando reparación:', err);
     } finally {
-      setLoadingRep(false);
+      setLoadingRep(false); // Siempre desactiva el estado de carga, haya error o no
     }
   };
 
   const handleLogout = () => {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
-    navigate('/login');
+    localStorage.removeItem('user');  // Borra los datos del usuario del localStorage
+    localStorage.removeItem('token'); // Borra el token de autenticación del localStorage
+    navigate('/login'); // Redirige al login
   };
 
   // ── Estilos del modal ──

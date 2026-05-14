@@ -6,31 +6,31 @@ import '../styles/login.css';
 import { login } from '../api/authService'; // 👈 1. Importa el servicio
 
 const Login = () => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [error, setError] = useState('');
-  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate(); // Permite redirigir al usuario a otra página
+  const [email, setEmail] = useState('');    // Guarda lo que el usuario escribe en el campo email
+  const [password, setPassword] = useState(''); // Guarda lo que el usuario escribe en el campo contraseña
+  const [error, setError] = useState('');    // Guarda el mensaje de error si el login falla
+  const [loading, setLoading] = useState(false); // Controla si el botón muestra "Iniciando sesión..."
 
   const handleLogin = async (event) => {
-    event.preventDefault();
-    setError('');
-    setLoading(true);
+    event.preventDefault(); // Evita que el formulario recargue la página al enviarse
+    setError('');      // Limpia cualquier error anterior antes de intentar
+    setLoading(true);  // Activa el estado de carga, deshabilita el botón
 
     try {
-      const usuario = await login(email, password); // 👈 2. Usa el servicio (lleva x-api-key)
+      const usuario = await login(email, password); // Llama a authService.js → que llama a POST api/auth/login con email y password
 
-      // Redirigir según el rol
+      // Lee el rol que devolvió la API y redirige según corresponda
       if (usuario.role === 'owner') {
-        navigate('/owner');
+        navigate('/owner'); // Si es propietario → va al panel del dueño
       } else {
-        navigate('/user');
+        navigate('/user');  // Si es cliente → va al panel de usuario
       }
 
     } catch (err) {
-      setError(err.message || 'No se pudo conectar con el servidor'); // 👈 3. Muestra el error del servicio
+      setError(err.message || 'No se pudo conectar con el servidor'); // Muestra el error que lanzó authService.js (ej: "Correo o contraseña incorrectos")
     } finally {
-      setLoading(false);
+      setLoading(false); // Siempre desactiva el estado de carga, haya error o no
     }
   };
 

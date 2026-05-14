@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj": {}
+    "C:\\Users\\Joshua raton\\Documents\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj": {
+    "C:\\Users\\Joshua raton\\Documents\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
+        "projectUniqueName": "C:\\Users\\Joshua raton\\Documents\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
         "projectName": "UpcSystemApi",
-        "projectPath": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
-        "packagesPath": "C:\\Users\\JosueAB\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\obj\\",
+        "projectPath": "C:\\Users\\Joshua raton\\Documents\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
+        "packagesPath": "C:\\Users\\Joshua raton\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Joshua raton\\Documents\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\JosueAB\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Joshua raton\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,13 +45,29 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.200"
+        "SdkAnalysisLevel": "10.0.300"
       },
       "frameworks": {
         "net8.0": {
           "framework": "net8.0",
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.8, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.6.2, )"
@@ -76,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

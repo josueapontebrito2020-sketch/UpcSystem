@@ -4,8 +4,9 @@
     "\\UpcSystemApi",
     "\\UpcSystemApi\\UpcSystemApi",
     "\\UpcSystemApi\\UpcSystemApi\\bin",
-    "\\UpcSystemApi\\UpcSystemApi\\bin\\Debug"
+    "\\UpcSystemApi\\UpcSystemApi\\bin\\Debug",
+    "\\UpcSystemApi\\UpcSystemApi\\Controllers"
   ],
-  "SelectedNode": "\\UpcSystemApi\\UpcSystemApi.slnx",
+  "SelectedNode": "\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
   "PreviewInSolutionExplorer": false
 }
