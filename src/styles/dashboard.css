@@ -1,0 +1,175 @@
+/* ============================================================
+   ARCHIVO: dashboard.css
+   USO: Estilos para los paneles de Usuario y Propietario.
+   MODIFICACIÓN: Optimizado para Layout de React (Fixed Sidebar).
+   ============================================================ */
+
+/* 1. BARRA SUPERIOR (TOPBAR) */
+.topbar {
+  height: 64px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed; /* Cambiado a fixed para que no se mueva */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.avatar, .avatar-owner {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.avatar { background: linear-gradient(135deg, var(--accent2), var(--accent)); }
+.avatar-owner { background: linear-gradient(135deg, #d97706, #f59e0b); color: #000; }
+
+.user-info { display: flex; align-items: center; gap: 1rem; }
+.user-name { font-size: 0.88rem; font-weight: 500; }
+
+.btn-logout {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-logout:hover { border-color: var(--accent); color: var(--accent); }
+
+/* 2. LAYOUT PRINCIPAL DEL DASHBOARD */
+.dashboard {
+  display: flex; /* Cambiado a flex para mejor control */
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 64px; /* Espacio para la topbar fixed */
+}
+
+/* 3. SIDEBAR (FIJO A LA IZQUIERDA) */
+.sidebar {
+  width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 2rem 0;
+  position: fixed; /* Sidebar siempre visible al hacer scroll */
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.sidebar-section { padding: 0 1.5rem; margin-bottom: 2rem; }
+.sidebar-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.88rem;
+  transition: all 0.2s;
+  margin-bottom: 0.3rem;
+  text-decoration: none; /* Por si usas Link de react-router */
+}
+
+.sidebar-item:hover, .sidebar-item.active {
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--accent);
+}
+
+/* 4. ÁREA DE CONTENIDO (CON MARGEN PARA NO TAPARSE) */
+.content {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 260px; /* IMPORTANTE: Deja espacio para el sidebar fixed */
+  background: var(--bg);
+  min-height: calc(100vh - 64px);
+}
+
+.page-header { margin-bottom: 2rem; }
+.page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+/* 5. TARJETAS DE ESTADÍSTICAS */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); }
+.stat-card .value { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; }
+
+/* 6. TABLA DE REPARACIONES (ESTILO MODERNO) */
+.repairs-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.repair-item {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+/* 7. CHAT (AJUSTADO PARA EL NUEVO LAYOUT) */
+.chat-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 1rem;
+  height: calc(100vh - 180px);
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* 8. RESPONSIVE */
+@media (max-width: 992px) {
+  .sidebar { width: 80px; }
+  .sidebar-label, .sidebar-item span { display: none; }
+  .content { margin-left: 80px; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .content { margin-left: 0; padding: 1rem; }
+  .repair-item { grid-template-columns: 1fr auto; }
+}
