@@ -1,0 +1,125 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\josueab\\3d objects\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\reparacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\reparacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\josueab\\3d objects\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\fakedatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\fakedatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\josueab\\3d objects\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\josueab\\3d objects\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\reparacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\reparacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\josueab\\3d objects\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\mensajescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\mensajescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ReparacionesController.cs",
+              "DocumentMoniker": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "ToolTip": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:46:17.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Mensaje.cs",
+              "DocumentMoniker": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\Mensaje.cs",
+              "ToolTip": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\Mensaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:45:10.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Reparacion.cs",
+              "DocumentMoniker": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\Reparacion.cs",
+              "ToolTip": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\Reparacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:44:09.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MensajesController.cs",
+              "DocumentMoniker": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\MensajesController.cs",
+              "ToolTip": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\MensajesController.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAgwCEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:19:17.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FakeDatabase.cs",
+              "DocumentMoniker": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\FakeDatabase.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\FakeDatabase.cs",
+              "ToolTip": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\FakeDatabase.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\FakeDatabase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T03:36:40.781Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
