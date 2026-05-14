@@ -1,0 +1,565 @@
+/* ============================================================
+   ARCHIVO: index.css
+   USO: Estilos exclusivos de la PÁGINA PRINCIPAL (index.html).
+        Depende de global.css (cargado primero).
+   ============================================================ */
+
+
+/* ────────────────────────────────────────────────────────────
+   1. SECCIÓN HERO (la pantalla de bienvenida grande)
+   ──────────────────────────────────────────────────────────── */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* Espacio superior para que no quede debajo del nav fijo */
+  padding: 8rem 2rem 4rem;
+  position: relative;
+  text-align: center;
+
+  /* Fondos con gradientes de luz — cámbia los colores RGBA para cambiar el brillo */
+  background:
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(0, 212, 255, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 90% 80%, rgba(124, 58, 237, 0.1) 0%, transparent 60%),
+    var(--bg);
+}
+
+/* Patrón de puntos en el fondo del hero */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(0, 212, 255, 0.04) 1px, transparent 1px);
+  background-size: 40px 40px; /* tamaño de la cuadrícula de puntos */
+}
+
+.hero-content {
+  position: relative;
+  max-width: 780px;
+}
+
+/* Chip pequeño arriba del título (el badge "⚡ Reparaciones Profesionales") */
+/* Para cambiar el texto, ve al HTML en la sección HERO */
+.hero-tag {
+  display: inline-block;
+  background: rgba(0, 212, 255, 0.1);
+  border: 1px solid var(--border);
+  color: var(--accent);
+  font-size: 0.78rem;
+  padding: 0.35rem 1rem;
+  border-radius: 20px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+/* Título principal del hero (H1) */
+/* Para cambiarlo ve a index.html y busca <!-- HERO --> */
+.hero h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: clamp(2.4rem, 6vw, 4.2rem); /* responsivo automático */
+  font-weight: 800;
+  line-height: 1.05;
+  margin-bottom: 1.5rem;
+}
+/* La palabra resaltada en azul dentro del H1 */
+.hero h1 em {
+  color: var(--accent);
+  font-style: normal;
+}
+
+/* Párrafo descriptivo del hero */
+.hero p {
+  color: var(--muted);
+  font-size: 1.1rem;
+  line-height: 1.8;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+}
+
+/* Contenedor de los dos botones del hero */
+.hero-btns {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Estadísticas del hero (los 4 números: +2500, 98%, etc.) ──
+   Para cambiar los números y etiquetas ve a index.html → sección HERO → .hero-stats */
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  margin-top: 4rem;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+
+/* El número grande (ej: "+2500") */
+.stat-num {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+/* La etiqueta debajo del número (ej: "Dispositivos reparados") */
+.stat-label {
+  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.5px;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   2. SECCIÓN SERVICIOS
+   Las 6 tarjetas con los tipos de reparación.
+   Para agregar/quitar servicios ve a index.html → <!-- SERVICIOS -->
+   ──────────────────────────────────────────────────────────── */
+#servicios { background: var(--bg); }
+
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+/* Grilla que organiza las tarjetas de servicio */
+/* minmax(260px, 1fr) = mínimo 260px por tarjeta, máximo: espacio disponible */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta individual de servicio */
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s, border-color 0.3s;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Efecto de luz que aparece al hacer hover */
+.service-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(0, 212, 255, 0.04), transparent 60%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.service-card:hover { transform: translateY(-6px); border-color: rgba(0, 212, 255, 0.35); }
+.service-card:hover::before { opacity: 1; }
+
+/* Ícono de cada servicio (FontAwesome) */
+.service-icon {
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+/* Nombre del servicio */
+.service-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+/* Descripción del servicio */
+.service-card p {
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.7;
+}
+
+/* Precio del servicio ("Desde $25.000 COP")
+   Para cambiar el precio ve a index.html → cada .service-card → .price-tag */
+.service-card .price-tag {
+  margin-top: 1.2rem;
+  font-size: 0.82rem;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   3. SECCIÓN TÉCNICOS
+   Las tarjetas con información de cada técnico.
+   Para agregar/quitar técnicos ve a index.html → <!-- TECNICOS -->
+   ──────────────────────────────────────────────────────────── */
+#tecnicos {
+  /* Fondo con degradado: negro → gris → negro */
+  background: linear-gradient(180deg, var(--bg) 0%, var(--surface) 50%, var(--bg) 100%);
+}
+
+.techs-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Grilla de tarjetas de técnicos */
+.techs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+/* Tarjeta individual de técnico */
+.tech-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s;
+}
+.tech-card:hover { transform: translateY(-4px); }
+
+/* Círculo con emoji/avatar del técnico */
+.tech-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1rem;
+  font-size: 2rem;
+}
+
+/* Nombre del técnico */
+.tech-card h3 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 700;
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Especialidad del técnico (ej: "Especialista en Móviles") */
+.tech-card .role {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+
+/* Descripción biográfica del técnico */
+.tech-card .bio {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Contenedor de los chips de habilidades */
+.tech-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+/* Chip individual de habilidad (ej: "iPhone", "Samsung") */
+.skill-tag {
+  background: rgba(0, 212, 255, 0.08);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  font-size: 0.72rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+}
+
+/* Calificación con estrellas */
+.rating {
+  color: #fbbf24; /* color amarillo de las estrellas */
+  font-size: 0.85rem;
+  margin-top: 0.8rem;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   4. SECCIÓN CATÁLOGO
+   La tienda con los accesorios disponibles.
+   Para agregar/quitar productos ve a index.html → <!-- CATÁLOGO -->
+   ──────────────────────────────────────────────────────────── */
+#catalogo { background: var(--bg); }
+
+.catalog-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Fila de botones de filtro (Todos / Fundas / Cargadores...) */
+.catalog-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Botón de filtro individual */
+.tab-btn {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.5rem 1.2rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* Botón activo/seleccionado */
+.tab-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 600;
+}
+
+/* Grilla de productos */
+.catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Tarjeta de producto */
+.product-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  transition: transform 0.3s, border-color 0.3s;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+.product-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 212, 255, 0.3);
+}
+
+/* Área de imagen/emoji del producto */
+.product-img {
+  height: 150px; /* alto de la imagen — cámbialo para que sea más grande */
+  background: var(--surface2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 3.5rem;
+  position: relative;
+}
+
+/* Badge de etiqueta ("Nuevo", "Oferta", "Top") sobre la imagen */
+.product-badge {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.6rem;
+  background: var(--accent2);
+  color: #fff;
+  font-size: 0.68rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.product-info { padding: 1rem; }
+
+/* Nombre del producto */
+.product-info h4 {
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Descripción corta del producto */
+.product-info .desc {
+  color: var(--muted);
+  font-size: 0.78rem;
+  margin-bottom: 0.8rem;
+}
+
+/* Fila inferior: precio + botón comprar */
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Precio del producto */
+.product-price {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent);
+}
+
+/* Botón "Comprar" */
+.btn-buy {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.3rem 0.7rem;
+  border-radius: 5px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-buy:hover { background: #00b8d9; }
+
+
+/* ────────────────────────────────────────────────────────────
+   5. SECCIÓN UBICACIÓN
+   Dirección, horario, teléfono y mapa.
+   Para cambiar los datos ve a index.html → <!-- UBICACIÓN -->
+   ──────────────────────────────────────────────────────────── */
+#ubicacion { background: var(--surface); }
+
+/* Layout de dos columnas: info + mapa */
+.location-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.location-info h2 {
+  font-family: 'Syne', sans-serif;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+/* Fila de dato de contacto (ícono + texto) */
+.info-item {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  align-items: flex-start;
+}
+
+/* Ícono de cada dato */
+.info-icon {
+  color: var(--accent);
+  font-size: 1.2rem;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.info-text strong {
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+.info-text span {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+/* Cuadro donde va el mapa */
+.map-placeholder {
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  height: 340px; /* alto del área del mapa */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.map-placeholder i {
+  font-size: 3rem;
+  color: var(--accent);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   6. FOOTER
+   Parte inferior de la página principal.
+   Para cambiar el texto ve a index.html → <!-- FOOTER -->
+   ──────────────────────────────────────────────────────────── */
+footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+/* Logo del footer */
+.footer-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Subtítulo del footer */
+.footer-sub {
+  color: var(--muted);
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+}
+
+/* Links del footer */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.footer-links a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--accent); }
+
+/* Copyright */
+.footer-copy {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   7. RESPONSIVE PARA INDEX
+   Ajustes específicos de la página principal en móvil.
+   ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* En móvil el mapa va debajo de la info, no al lado */
+  .location-wrap { grid-template-columns: 1fr; }
+
+  /* El encabezado de técnicos pasa a columna */
+  .techs-header { flex-direction: column; }
+}

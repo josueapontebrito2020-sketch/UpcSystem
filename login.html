@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- TÍTULO DE LA PESTAÑA -->
+  <title>Iniciar Sesión – Upc System</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <!-- Estilos: primero global, luego auth (compartido con register), luego login específico -->
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/auth.css"/>
+  <link rel="stylesheet" href="css/login.css"/>
+</head>
+<body>
+
+<!-- NAV simplificada para páginas internas -->
+<nav>
+  <!-- Logo / link al inicio -->
+  <a href="index.html" class="logo">Upc <span>System</span> Pro</a>
+
+  <!-- Link para volver -->
+  <a href="index.html" class="back-link">
+    <i class="fas fa-arrow-left"></i> Volver al inicio
+  </a>
+</nav>
+
+<main>
+  <!-- Contenedor de dos columnas: panel decorativo + formulario -->
+  <div class="auth-wrapper">
+
+    <!-- ══════════════════════════════════════════════
+         PANEL DECORATIVO IZQUIERDO
+         Para cambiar:
+         · Chip (.side-tag): cambia el texto
+         · Título (.side-title): cambia el título
+         · Descripción (.side-desc): cambia el párrafo
+         · Features: agrega/quita .feat según quieras
+    ══════════════════════════════════════════════ -->
+    <div class="auth-side">
+      <div class="side-tag">Bienvenido de vuelta</div>                  <!-- CHIP DEL PANEL -->
+      <div class="side-title">Tu dispositivo en buenas manos</div>      <!-- TÍTULO DEL PANEL -->
+      <div class="side-desc">Inicia sesión para ver el estado de tu reparación y chatear con nuestros técnicos.</div>
+
+      <!-- Lista de beneficios -->
+      <div class="side-features">
+        <div class="feat">
+          <div class="feat-icon"><i class="fas fa-comments"></i></div>
+          Chat directo con tu técnico          <!-- BENEFICIO 1 -->
+        </div>
+        <div class="feat">
+          <div class="feat-icon"><i class="fas fa-timeline"></i></div>
+          Estado de reparación en tiempo real  <!-- BENEFICIO 2 -->
+        </div>
+        <div class="feat">
+          <div class="feat-icon"><i class="fas fa-shield-halved"></i></div>
+          Garantía registrada en tu cuenta     <!-- BENEFICIO 3 -->
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════
+         FORMULARIO DE LOGIN (panel derecho)
+         Para cambiar:
+         · Título (.form-title): cambia el texto "Iniciar Sesión"
+         · Subtítulo (.form-sub): cambia el párrafo
+    ══════════════════════════════════════════════ -->
+    <div class="auth-form-wrap">
+      <div class="form-title">Iniciar Sesión</div>        <!-- TÍTULO DEL FORMULARIO -->
+      <div class="form-sub">Ingresa tus datos para continuar</div>
+
+      <!-- El onsubmit llama a handleLogin() en login.js -->
+      <form onsubmit="handleLogin(event)">
+
+        <!-- CAMPO: Correo electrónico -->
+        <div class="form-group">
+          <label>Correo electrónico</label>
+          <div class="input-wrap">
+            <i class="fas fa-envelope"></i>
+            <input type="email" id="email" placeholder="tu@correo.com"/>
+          </div>
+        </div>
+
+        <!-- CAMPO: Contraseña -->
+        <div class="form-group">
+          <label>Contraseña</label>
+          <div class="input-wrap">
+            <i class="fas fa-lock"></i>
+            <input type="password" id="password" placeholder="••••••••"/>
+          </div>
+        </div>
+
+        <!-- Fila: Recordarme + ¿Olvidaste? -->
+        <div class="row-opts">
+          <label class="check-label">
+            <input type="checkbox" style="width:auto;padding:0;"/>
+            Recordarme
+          </label>
+          <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+        </div>
+
+        <!-- Botón de envío -->
+        <button type="submit" class="btn-submit">Iniciar Sesión</button>
+      </form>
+
+      <!-- Divisor -->
+      <div class="divider"><span>o</span></div>
+
+      <!-- Acceso directo al panel del propietario -->
+      <button class="btn-owner" onclick="window.location.href='owner.html'">
+        <i class="fas fa-user-gear"></i> Acceso propietario / administrador
+      </button>
+
+      <!-- Link al registro -->
+      <div class="register-link">
+        ¿No tienes cuenta? <a href="register.html">Regístrate gratis</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<script src="js/global.js"></script>  <!-- Funciones globales -->
+<script src="js/login.js"></script>   <!-- handleLogin() — redirige según el rol -->
+
+</body>
+</html>

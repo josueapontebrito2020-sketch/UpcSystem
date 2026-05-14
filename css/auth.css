@@ -1,0 +1,149 @@
+/* ============================================================
+   ARCHIVO: auth.css
+   USO: Estilos compartidos entre login.html y register.html.
+        Depende de global.css (cargado primero).
+   ============================================================ */
+
+
+/* ────────────────────────────────────────────────────────────
+   1. ÁREA PRINCIPAL DE AUTENTICACIÓN
+   El fondo con gradientes de luz detrás del formulario.
+   ──────────────────────────────────────────────────────────── */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+
+  /* Gradientes decorativos de fondo — cámbia los RGBA para cambiar el color */
+  background:
+    radial-gradient(ellipse 60% 50% at 20% 50%, rgba(124, 58, 237, 0.08), transparent 60%),
+    radial-gradient(ellipse 50% 50% at 80% 50%, rgba(0, 212, 255, 0.08), transparent 60%),
+    var(--bg);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   2. FORMULARIOS — CAMPOS DE ENTRADA
+   Compartido por login y registro.
+   ──────────────────────────────────────────────────────────── */
+
+/* Etiqueta encima de cada input */
+label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+/* Contenedor que agrupa el ícono + input */
+.input-wrap { position: relative; }
+
+/* Ícono dentro del input */
+.input-wrap i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Campo de texto / contraseña / select */
+input,
+select {
+  width: 100%;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.8rem 1rem 0.8rem 2.8rem; /* espacio a la izquierda para el ícono */
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  outline: none;
+}
+
+/* Estilo cuando el campo está activo/enfocado */
+input:focus,
+select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.1);
+}
+
+input::placeholder { color: var(--muted); }
+
+
+/* ────────────────────────────────────────────────────────────
+   3. BOTÓN DE ENVÍO DEL FORMULARIO
+   El botón grande "Iniciar Sesión" / "Crear cuenta"
+   ──────────────────────────────────────────────────────────── */
+.btn-submit {
+  width: 100%;
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  padding: 0.9rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: 'Syne', sans-serif;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.25);
+}
+.btn-submit:hover {
+  background: #00b8d9;
+  transform: translateY(-1px);
+  box-shadow: 0 0 30px rgba(0, 212, 255, 0.4);
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   4. DIVISOR "— o —"
+   Línea divisora entre métodos de acceso.
+   ──────────────────────────────────────────────────────────── */
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+.divider::before,
+.divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+.divider span {
+  color: var(--muted);
+  font-size: 0.78rem;
+}
+
+
+/* ────────────────────────────────────────────────────────────
+   5. LINK AL REGISTRO / LOGIN
+   Texto "¿No tienes cuenta? Regístrate" al pie del formulario.
+   ──────────────────────────────────────────────────────────── */
+.register-link,
+.login-link {
+  text-align: center;
+  margin-top: 1.8rem;
+  font-size: 0.87rem;
+  color: var(--muted);
+}
+.register-link a,
+.login-link a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+}
+.register-link a:hover,
+.login-link a:hover {
+  text-decoration: underline;
+}

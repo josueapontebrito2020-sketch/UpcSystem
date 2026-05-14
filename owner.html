@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Panel Propietario – Upc System</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+
+  <link rel="stylesheet" href="css/global.css"/>
+  <link rel="stylesheet" href="css/dashboard.css"/>
+  <link rel="stylesheet" href="css/owner.css"/>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════════════════
+     TOPBAR DEL PANEL DEL PROPIETARIO
+     Para cambiar:
+     · Las iniciales del avatar (.avatar-owner): ej "AD" = Admin
+     · El nombre mostrado junto al avatar
+══════════════════════════════════════════════════════ -->
+<div class="topbar">
+  <div style="display:flex;align-items:center;gap:0.8rem;">
+    <div class="logo">Upc <span>System</span> Pro</div>
+    <div class="owner-badge">PROPIETARIO</div>     <!-- BADGE DE ROL — puedes cambiar el texto -->
+  </div>
+  <div class="top-right">
+    <div class="avatar-owner">AD</div>             <!-- INICIALES DEL ADMINISTRADOR -->
+    <span style="font-size:0.88rem;">Admin</span>  <!-- NOMBRE DEL ADMINISTRADOR -->
+    <button class="btn-logout" onclick="window.location.href='login.html'">
+      <i class="fas fa-sign-out-alt"></i> Salir
+    </button>
+  </div>
+</div>
+
+<div class="dashboard">
+
+  <!-- ══════════════════════════════════════════════════
+       SIDEBAR — MENÚ LATERAL DEL PROPIETARIO
+  ══════════════════════════════════════════════════ -->
+  <div class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Gestión</div>
+
+      <div class="sidebar-item active" onclick="showPage('overview', this)">
+        <i class="fas fa-chart-line"></i> Resumen
+      </div>
+      <div class="sidebar-item" onclick="showPage('repairs', this)">
+        <i class="fas fa-wrench"></i> Reparaciones
+        <span class="badge">8</span>              <!-- NÚMERO TOTAL DE REPARACIONES -->
+      </div>
+      <div class="sidebar-item" onclick="showPage('chats', this)">
+        <i class="fas fa-comments"></i> Chats clientes
+        <span class="badge badge-red">5</span>   <!-- MENSAJES SIN RESPONDER -->
+      </div>
+      <div class="sidebar-item" onclick="showPage('technicians', this)">
+        <i class="fas fa-users"></i> Técnicos
+      </div>
+    </div>
+
+    <div class="sidebar-section">
+      <div class="sidebar-label">Sistema</div>
+      <div class="sidebar-item" onclick="window.location.href='index.html'">
+        <i class="fas fa-globe"></i> Ver sitio web
+      </div>
+      <div class="sidebar-item" onclick="window.location.href='login.html'">
+        <i class="fas fa-arrow-right-from-bracket"></i> Cerrar sesión
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ÁREA DE CONTENIDO -->
+  <div class="content">
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: RESUMEN (overview)
+         Las métricas generales del negocio.
+         Para cambiar los números edita los .value
+         Para cambiar las etiquetas edita los .label
+    ══════════════════════════════════════════════ -->
+    <div class="page active" id="page-overview">
+      <div class="page-header">
+        <h1>Panel de Control ⚙️</h1>
+        <p>Resumen de actividad del negocio – Enero 2025.</p>  <!-- FECHA DEL REPORTE -->
+      </div>
+
+      <!-- Tarjetas de métricas -->
+      <div class="stat-cards">
+        <div class="stat-card">
+          <div class="label">Reparaciones hoy</div>
+          <div class="value c-accent">12</div>              <!-- NÚMERO DE HOY -->
+          <div class="trend up">↑ +3 vs ayer</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Pendientes</div>
+          <div class="value c-yellow">5</div>
+          <div class="trend">Por asignar técnico</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">En reparación</div>
+          <div class="value c-accent">3</div>
+          <div class="trend">En progreso activo</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Completadas</div>
+          <div class="value c-green">4</div>
+          <div class="trend up">↑ 80% tasa hoy</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Ingresos hoy</div>
+          <div class="value c-purple">$840k</div>           <!-- INGRESOS DEL DÍA -->
+          <div class="trend up">↑ +12%</div>
+        </div>
+        <div class="stat-card">
+          <div class="label">Mensajes nuevos</div>
+          <div class="value c-red">5</div>
+          <div class="trend">Sin responder</div>
+        </div>
+      </div>
+
+      <!-- Tabla rápida de reparaciones recientes -->
+      <div class="repairs-table">
+        <div style="padding:1.2rem 1.5rem;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+          <span style="font-family:'Syne',sans-serif;font-weight:700;">Reparaciones recientes</span>
+          <span style="font-size:0.8rem;color:var(--muted);cursor:pointer;"
+                onclick="showPage('repairs', document.querySelectorAll('.sidebar-item')[1])">
+            Ver todo →
+          </span>
+        </div>
+
+        <!-- Encabezados de columna -->
+        <div class="table-head">
+          <span>Dispositivo</span>
+          <span>Cliente</span>
+          <span>Técnico</span>
+          <span>Estado</span>
+          <span>Acción</span>
+        </div>
+
+        <!-- FILA 1 -->
+        <div class="table-row" data-status="En reparación">
+          <div class="device-cell">
+            <div class="d-icon">📱</div>
+            <div>
+              <div class="d-name">iPhone 14 Pro</div>       <!-- DISPOSITIVO -->
+              <div class="d-issue">Pantalla rota</div>      <!-- PROBLEMA -->
+            </div>
+          </div>
+          <div class="client-cell">
+            Juan Pérez                                       <!-- NOMBRE DEL CLIENTE -->
+            <div class="phone">+57 310 456 7890</div>       <!-- TELÉFONO DEL CLIENTE -->
+          </div>
+          <div class="tech-cell">
+            <div class="mini-av">CM</div> Carlos M.         <!-- INICIALES Y NOMBRE DEL TÉCNICO -->
+          </div>
+          <div><span class="status-badge s-progress">En reparación</span></div>
+          <!-- Select para cambiar estado — llama a changeStatus() en owner.js -->
+          <div>
+            <select class="status-select" onchange="changeStatus(this)">
+              <option>En reparación</option>
+              <option>Pendiente</option>
+              <option>Reparado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- FILA 2 -->
+        <div class="table-row" data-status="Pendiente">
+          <div class="device-cell">
+            <div class="d-icon">🎮</div>
+            <div>
+              <div class="d-name">PlayStation 5</div>
+              <div class="d-issue">Lector de disco</div>
+            </div>
+          </div>
+          <div class="client-cell">Juan Pérez<div class="phone">+57 310 456 7890</div></div>
+          <div class="tech-cell"><div class="mini-av">MG</div> María G.</div>
+          <div><span class="status-badge s-pending">Pendiente</span></div>
+          <div>
+            <select class="status-select" onchange="changeStatus(this)">
+              <option>Pendiente</option>
+              <option>En reparación</option>
+              <option>Reparado</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- FILA 3 -->
+        <div class="table-row" data-status="Reparado">
+          <div class="device-cell">
+            <div class="d-icon">💻</div>
+            <div>
+              <div class="d-name">Laptop Dell</div>
+              <div class="d-issue">No enciende</div>
+            </div>
+          </div>
+          <div class="client-cell">Ana García<div class="phone">+57 315 789 1234</div></div>
+          <div class="tech-cell"><div class="mini-av">LR</div> Laura R.</div>
+          <div><span class="status-badge s-done">✓ Reparado</span></div>
+          <div>
+            <select class="status-select" onchange="changeStatus(this)">
+              <option>Reparado</option>
+              <option>Pendiente</option>
+              <option>En reparación</option>
+            </select>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: GESTIÓN DE REPARACIONES
+         Tabla completa con todas las reparaciones.
+         Para agregar una fila: copia un .table-row completo.
+         
+         data-status debe coincidir con el <option> seleccionado:
+         "Pendiente" | "En reparación" | "Reparado"
+    ══════════════════════════════════════════════ -->
+    <div class="page" id="page-repairs">
+      <div class="page-header">
+        <h1>Gestión de Reparaciones</h1>
+        <p>Administra todos los servicios y cambia sus estados.</p>
+      </div>
+
+      <!-- Botones de filtro por estado -->
+      <div class="filter-bar">
+        <button class="filter-btn active" onclick="filterRows('all',        this)">Todos (8)</button>
+        <button class="filter-btn"        onclick="filterRows('Pendiente',  this)">⏳ Pendientes (3)</button>
+        <button class="filter-btn"        onclick="filterRows('En reparación', this)">🔧 En reparación (3)</button>
+        <button class="filter-btn"        onclick="filterRows('Reparado',   this)">✓ Reparados (2)</button>
+      </div>
+
+      <div class="repairs-table">
+        <div class="table-head">
+          <span>Dispositivo</span>
+          <span>Cliente</span>
+          <span>Técnico</span>
+          <span>Estado</span>
+          <span>Cambiar estado</span>
+        </div>
+
+        <!-- ── REPARACIONES — agrega/quita filas aquí ── -->
+
+        <div class="table-row" data-status="En reparación">
+          <div class="device-cell"><div class="d-icon">📱</div><div><div class="d-name">iPhone 14 Pro</div><div class="d-issue">Pantalla rota · 21 ene</div></div></div>
+          <div class="client-cell">Juan Pérez<div class="phone">+57 310 456 7890</div></div>
+          <div class="tech-cell"><div class="mini-av">CM</div> Carlos M.</div>
+          <div><span class="status-badge s-progress">En reparación</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>En reparación</option><option>Pendiente</option><option>Reparado</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="Pendiente">
+          <div class="device-cell"><div class="d-icon">🎮</div><div><div class="d-name">PlayStation 5</div><div class="d-issue">Lector de disco · Hoy</div></div></div>
+          <div class="client-cell">Juan Pérez<div class="phone">+57 310 456 7890</div></div>
+          <div class="tech-cell"><div class="mini-av">MG</div> María G.</div>
+          <div><span class="status-badge s-pending">Pendiente</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>Pendiente</option><option>En reparación</option><option>Reparado</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="Reparado">
+          <div class="device-cell"><div class="d-icon">💻</div><div><div class="d-name">Laptop Dell Inspiron</div><div class="d-issue">No enciende · 15 ene</div></div></div>
+          <div class="client-cell">Ana García<div class="phone">+57 315 789 1234</div></div>
+          <div class="tech-cell"><div class="mini-av">LR</div> Laura R.</div>
+          <div><span class="status-badge s-done">✓ Reparado</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>Reparado</option><option>Pendiente</option><option>En reparación</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="Pendiente">
+          <div class="device-cell"><div class="d-icon">📱</div><div><div class="d-name">Samsung Galaxy S23</div><div class="d-issue">Batería hinchada · 20 ene</div></div></div>
+          <div class="client-cell">Pedro López<div class="phone">+57 312 345 6789</div></div>
+          <div class="tech-cell"><div class="mini-av">CM</div> Carlos M.</div>
+          <div><span class="status-badge s-pending">Pendiente</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>Pendiente</option><option>En reparación</option><option>Reparado</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="En reparación">
+          <div class="device-cell"><div class="d-icon">🖥️</div><div><div class="d-name">PC Gamer ASUS</div><div class="d-issue">Sobrecalentamiento · 19 ene</div></div></div>
+          <div class="client-cell">Luis Torres<div class="phone">+57 318 901 2345</div></div>
+          <div class="tech-cell"><div class="mini-av">AT</div> Andrés T.</div>
+          <div><span class="status-badge s-progress">En reparación</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>En reparación</option><option>Pendiente</option><option>Reparado</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="Pendiente">
+          <div class="device-cell"><div class="d-icon">📱</div><div><div class="d-name">Xiaomi Redmi 12</div><div class="d-issue">No carga · Hoy</div></div></div>
+          <div class="client-cell">Carmen Ruiz<div class="phone">+57 320 234 5678</div></div>
+          <div class="tech-cell"><div class="mini-av">CM</div> Carlos M.</div>
+          <div><span class="status-badge s-pending">Pendiente</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>Pendiente</option><option>En reparación</option><option>Reparado</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="Reparado">
+          <div class="device-cell"><div class="d-icon">🎧</div><div><div class="d-name">AirPods Pro</div><div class="d-issue">Sin audio izq · 14 ene</div></div></div>
+          <div class="client-cell">Sofía Herrera<div class="phone">+57 316 567 8901</div></div>
+          <div class="tech-cell"><div class="mini-av">MG</div> María G.</div>
+          <div><span class="status-badge s-done">✓ Reparado</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>Reparado</option><option>Pendiente</option><option>En reparación</option></select></div>
+        </div>
+
+        <div class="table-row" data-status="En reparación">
+          <div class="device-cell"><div class="d-icon">📟</div><div><div class="d-name">iPad Air 5ta gen</div><div class="d-issue">Pantalla rota · 18 ene</div></div></div>
+          <div class="client-cell">Roberto Díaz<div class="phone">+57 311 678 9012</div></div>
+          <div class="tech-cell"><div class="mini-av">MG</div> María G.</div>
+          <div><span class="status-badge s-progress">En reparación</span></div>
+          <div><select class="status-select" onchange="changeStatus(this)"><option>En reparación</option><option>Pendiente</option><option>Reparado</option></select></div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: CHATS DE CLIENTES
+         Para agregar un cliente: copia un .chat-contact.
+         El onclick llama selectChat(this, 'Nombre', 'Dispositivo')
+    ══════════════════════════════════════════════ -->
+    <div class="page" id="page-chats">
+      <div class="page-header">
+        <h1>Chats de Clientes</h1>
+        <p>Responde a todos tus clientes desde un solo lugar.</p>
+      </div>
+
+      <div class="chats-layout">
+
+        <!-- Lista de conversaciones -->
+        <div class="chat-list">
+          <div class="chat-list-head">
+            <h3>Conversaciones</h3>
+            <span style="font-size:0.75rem;color:var(--accent);">5 nuevas</span>
+          </div>
+
+          <!-- Buscador de clientes -->
+          <input type="text" class="search-chat" placeholder="🔍 Buscar cliente..."/>
+
+          <div class="chat-contacts">
+
+            <!-- CLIENTE 1 — activo/seleccionado por defecto -->
+            <div class="chat-contact selected"
+                 onclick="selectChat(this, 'Juan Pérez', 'iPhone 14 Pro – En reparación')">
+              <div class="contact-av">JP</div>                        <!-- INICIALES -->
+              <div class="contact-detail">
+                <h4>Juan Pérez</h4>                                   <!-- NOMBRE -->
+                <p>¿Cuándo estará lista mi...?</p>                    <!-- ÚLTIMO MENSAJE -->
+              </div>
+              <div class="unread-dot"></div>                          <!-- PUNTO AZUL = no leído -->
+              <div class="contact-time">10:44</div>                   <!-- HORA -->
+            </div>
+
+            <!-- CLIENTE 2 -->
+            <div class="chat-contact"
+                 onclick="selectChat(this, 'Ana García', 'Laptop Dell – Reparado')">
+              <div class="contact-av" style="background:linear-gradient(135deg,#7c3aed,#ec4899)">AG</div>
+              <div class="contact-detail">
+                <h4>Ana García</h4>
+                <p>¡Gracias! Ya la recibí funciona</p>
+              </div>
+              <div class="contact-time">09:12</div>
+            </div>
+
+            <!-- CLIENTE 3 -->
+            <div class="chat-contact"
+                 onclick="selectChat(this, 'Pedro López', 'Samsung Galaxy S23 – Pendiente')">
+              <div class="contact-av" style="background:linear-gradient(135deg,#059669,#0d9488)">PL</div>
+              <div class="contact-detail">
+                <h4>Pedro López</h4>
+                <p>¿Ya revisaron mi Samsung?</p>
+              </div>
+              <div class="unread-dot"></div>
+              <div class="contact-time">08:55</div>
+            </div>
+
+            <!-- CLIENTE 4 -->
+            <div class="chat-contact"
+                 onclick="selectChat(this, 'Luis Torres', 'PC Gamer ASUS – En reparación')">
+              <div class="contact-av" style="background:linear-gradient(135deg,#d97706,#f59e0b)">LT</div>
+              <div class="contact-detail">
+                <h4>Luis Torres</h4>
+                <p>Cuándo me avisan del PC?</p>
+              </div>
+              <div class="unread-dot"></div>
+              <div class="contact-time">Ayer</div>
+            </div>
+
+            <!-- CLIENTE 5 -->
+            <div class="chat-contact"
+                 onclick="selectChat(this, 'Carmen Ruiz', 'Xiaomi Redmi 12 – Pendiente')">
+              <div class="contact-av" style="background:linear-gradient(135deg,#dc2626,#9f1239)">CR</div>
+              <div class="contact-detail">
+                <h4>Carmen Ruiz</h4>
+                <p>Mi celular no cargaba desde...</p>
+              </div>
+              <div class="unread-dot"></div>
+              <div class="contact-time">Ayer</div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Ventana del chat activo -->
+        <div class="chat-window">
+          <div class="cw-header">
+            <div style="display:flex;gap:1rem;align-items:center;">
+              <!-- Avatar dinámico — se actualiza por selectChat() en owner.js -->
+              <div class="contact-av" id="cwAvatar">JP</div>
+              <div class="cw-title">
+                <h3 id="cwName">Juan Pérez</h3>        <!-- NOMBRE — actualizado por JS -->
+                <p id="cwDevice">iPhone 14 Pro – En reparación</p>  <!-- DISPOSITIVO — actualizado por JS -->
+              </div>
+            </div>
+            <div class="cw-actions">
+              <button class="icon-btn" title="Llamar al cliente"><i class="fas fa-phone"></i></button>
+              <button class="icon-btn" title="Ver reparación"><i class="fas fa-wrench"></i></button>
+            </div>
+          </div>
+
+          <!-- Historial de mensajes del chat -->
+          <div class="chat-messages" id="ownerChatMsgs">
+
+            <div>
+              <div class="msg received">Hola, ¿cuándo estará lista mi pantalla? Ya pasaron 2 días 😅</div>
+              <div class="msg-meta">Juan Pérez · 10:23 am</div>
+            </div>
+            <div>
+              <div class="msg sent">¡Hola Juan! La pantalla original llegó esta mañana. Tu técnico Carlos ya está trabajando en ella. Estará lista hoy en la tarde 💪</div>
+              <div class="msg-meta">Tú (Admin) · 10:30 am · ✓✓</div>
+            </div>
+            <div>
+              <div class="msg received">¡Perfecto! ¿A qué hora puedo ir a recogerla?</div>
+              <div class="msg-meta">Juan Pérez · 10:44 am</div>
+            </div>
+
+          </div>
+
+          <!-- Input para responder — Enter o botón llaman ownerSend() en owner.js -->
+          <div class="chat-input-row">
+            <input type="text" id="ownerInput"
+                   placeholder="Escribe tu respuesta..."
+                   onkeydown="if(event.key==='Enter') ownerSend()"/>
+            <button class="btn-send" onclick="ownerSend()">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ══════════════════════════════════════════════
+         PÁGINA: GESTIÓN DE TÉCNICOS
+         Para agregar un técnico: copia una tarjeta y modifica los datos.
+         Para cambiar el estado: modifica el span.status-badge
+    ══════════════════════════════════════════════ -->
+    <div class="page" id="page-technicians">
+      <div class="page-header">
+        <h1>Gestión de Técnicos</h1>
+        <p>Administra el equipo de reparadores.</p>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;">
+
+        <!-- TÉCNICO 1 -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;text-align:center;">
+          <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--accent2),var(--accent));display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;">👨‍💻</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.2rem;">Carlos Mendoza</div>  <!-- NOMBRE -->
+          <div style="color:var(--accent);font-size:0.8rem;margin-bottom:0.8rem;">Móviles</div>                  <!-- ESPECIALIDAD -->
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">3 reparaciones activas</div>
+          <span class="status-badge s-progress">● Disponible</span>   <!-- ESTADO DEL TÉCNICO -->
+        </div>
+
+        <!-- TÉCNICO 2 -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;text-align:center;">
+          <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#ec4899);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;">👩‍🔧</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.2rem;">Laura Ríos</div>
+          <div style="color:var(--accent);font-size:0.8rem;margin-bottom:0.8rem;">Computadoras</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">1 reparación activa</div>
+          <span class="status-badge s-pending">● Ocupada</span>
+        </div>
+
+        <!-- TÉCNICO 3 -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;text-align:center;">
+          <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#059669,#0d9488);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;">👨‍🔬</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.2rem;">Andrés Torres</div>
+          <div style="color:var(--accent);font-size:0.8rem;margin-bottom:0.8rem;">Redes & Software</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">2 reparaciones activas</div>
+          <span class="status-badge s-progress">● Disponible</span>
+        </div>
+
+        <!-- TÉCNICO 4 -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.8rem;text-align:center;">
+          <div style="width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,#d97706,#f59e0b);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.4rem;">👩‍💻</div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;margin-bottom:0.2rem;">María Gómez</div>
+          <div style="color:var(--accent);font-size:0.8rem;margin-bottom:0.8rem;">Tablets & Consolas</div>
+          <div style="font-size:0.78rem;color:var(--muted);margin-bottom:1rem;">2 reparaciones activas</div>
+          <span class="status-badge s-done">● Disponible</span>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- fin .content -->
+</div><!-- fin .dashboard -->
+
+<script src="js/global.js"></script>  <!-- Funciones globales -->
+<script src="js/owner.js"></script>   <!-- showPage, changeStatus, filterRows, selectChat, ownerSend -->
+
+</body>
+</html>
