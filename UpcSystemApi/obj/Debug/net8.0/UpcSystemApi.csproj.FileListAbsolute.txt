@@ -34,3 +34,39 @@ C:\Users\Santiago Ortiz\source\repos\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\
 C:\Users\Santiago Ortiz\source\repos\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.pdb
 C:\Users\Santiago Ortiz\source\repos\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.genruntimeconfig.cache
 C:\Users\Santiago Ortiz\source\repos\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\ref\UpcSystemApi.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\refint\UpcSystemApi.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.pdb
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\appsettings.Development.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\appsettings.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\UpcSystemApi.staticwebassets.endpoints.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\UpcSystemApi.exe
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\UpcSystemApi.deps.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\UpcSystemApi.runtimeconfig.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\UpcSystemApi.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\UpcSystemApi.pdb
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\Microsoft.OpenApi.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.csproj.AssemblyReference.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.AssemblyInfoInputs.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.AssemblyInfo.cs
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.csproj.CoreCompileInputs.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\rjimswa.dswa.cache.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\scopedcss\bundle\UpcSystemApi.styles.css
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\staticwebassets.build.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\staticwebassets.development.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\swae.build.ex.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSyste.3259772C.Up2Date
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.genruntimeconfig.cache
+C:\Users\JosueAB\Music\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\ref\UpcSystemApi.dll

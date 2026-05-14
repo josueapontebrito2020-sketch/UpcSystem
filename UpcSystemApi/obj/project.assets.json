@@ -447,23 +447,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Santiago Ortiz\\.nuget\\packages\\": {},
+    "C:\\Users\\JosueAB\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Santiago Ortiz\\source\\repos\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
+      "projectUniqueName": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
       "projectName": "UpcSystemApi",
-      "projectPath": "C:\\Users\\Santiago Ortiz\\source\\repos\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
-      "packagesPath": "C:\\Users\\Santiago Ortiz\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Santiago Ortiz\\source\\repos\\UpcSystemApi\\UpcSystemApi\\obj\\",
+      "projectPath": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
+      "packagesPath": "C:\\Users\\JosueAB\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Santiago Ortiz\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JosueAB\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -476,7 +476,6 @@
       },
       "frameworks": {
         "net8.0": {
-          "framework": "net8.0",
           "targetAlias": "net8.0",
           "projectReferences": {}
         }
@@ -495,7 +494,6 @@
     },
     "frameworks": {
       "net8.0": {
-        "framework": "net8.0",
         "targetAlias": "net8.0",
         "dependencies": {
           "Swashbuckle.AspNetCore": {
@@ -514,6 +512,24 @@
         ],
         "assetTargetFallback": true,
         "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Ref",
+            "version": "[8.0.26, 8.0.26]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Host.win-x64",
+            "version": "[8.0.26, 8.0.26]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Ref",
+            "version": "[8.0.26, 8.0.26]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Ref",
+            "version": "[8.0.26, 8.0.26]"
+          }
+        ],
         "frameworkReferences": {
           "Microsoft.AspNetCore.App": {
             "privateAssets": "none"

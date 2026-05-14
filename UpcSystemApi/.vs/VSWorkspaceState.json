@@ -1,7 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\UpcSystemApi"
+    "\\Controllers",
+    "\\Models",
+    "\\Properties"
   ],
+  "SelectedNode": "\\Models\\FakeDatabase.cs",
   "PreviewInSolutionExplorer": false
 }

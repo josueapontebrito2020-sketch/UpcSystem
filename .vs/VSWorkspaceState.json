@@ -1,10 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\UpcSystemApi",
-    "\\UpcSystemApi\\UpcSystemApi",
-    "\\UpcSystemApi\\UpcSystemApi\\Middleware"
+    "\\UpcSystemApi"
   ],
-  "SelectedNode": "\\UpcSystemApi\\UpcSystemApi\\Program.cs",
   "PreviewInSolutionExplorer": false
 }
