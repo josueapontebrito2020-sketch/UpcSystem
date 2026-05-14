@@ -1,9 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\Controllers",
-    "\\Models",
-    "\\Properties"
+    "\\UpcSystemApi"
   ],
   "PreviewInSolutionExplorer": false
 }

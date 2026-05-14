@@ -1,80 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\FakeDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\FakeDatabase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Accesorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Accesorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Tecnico.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Tecnico.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Servicio.cs||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Servicio.cs||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\AccesoriosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AccesoriosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\TecnicosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\TecnicosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\ServiciosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ServiciosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Reparacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\User.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\MensajesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\Mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\LoginRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\LoginRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\RegisterRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Models\\RegisterRequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Controllers\\ReparacionesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UpcSystemApi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:UpcSystemApi.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\Users\\JosueAB\\3D Objects\\UpcSystemApi\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -82,232 +9,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": -1,
           "Children": [
             {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Accesorio.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Accesorio.cs",
-              "RelativeDocumentMoniker": "Models\\Accesorio.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Accesorio.cs",
-              "RelativeToolTip": "Models\\Accesorio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T08:01:40.843Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Tecnico.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Tecnico.cs",
-              "RelativeDocumentMoniker": "Models\\Tecnico.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Tecnico.cs",
-              "RelativeToolTip": "Models\\Tecnico.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T08:01:00.633Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Servicio.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Servicio.cs",
-              "RelativeDocumentMoniker": "Models\\Servicio.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Servicio.cs",
-              "RelativeToolTip": "Models\\Servicio.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T08:00:30.615Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AccesoriosController.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\AccesoriosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AccesoriosController.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\AccesoriosController.cs",
-              "RelativeToolTip": "Controllers\\AccesoriosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T08:00:01.09Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TecnicosController.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\TecnicosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\TecnicosController.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\TecnicosController.cs",
-              "RelativeToolTip": "Controllers\\TecnicosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T07:59:32.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ServiciosController.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\ServiciosController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ServiciosController.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\ServiciosController.cs",
-              "RelativeToolTip": "Controllers\\ServiciosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T07:59:04.449Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FakeDatabase.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\FakeDatabase.cs",
-              "RelativeDocumentMoniker": "Models\\FakeDatabase.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\FakeDatabase.cs",
-              "RelativeToolTip": "Models\\FakeDatabase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T04:42:55.759Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "Models\\RegisterRequest.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\RegisterRequest.cs",
-              "RelativeToolTip": "Models\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T06:30:47.417Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Mensaje.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs",
-              "RelativeDocumentMoniker": "Models\\Mensaje.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs",
-              "RelativeToolTip": "Models\\Mensaje.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T06:30:49.249Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Reparacion.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs",
-              "RelativeDocumentMoniker": "Models\\Reparacion.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs",
-              "RelativeToolTip": "Models\\Reparacion.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T06:30:45.888Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MensajesController.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\MensajesController.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs",
-              "RelativeToolTip": "Controllers\\MensajesController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAACEAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T06:03:33.595Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAAwD8AAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T05:58:13.109Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "Models\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\LoginRequest.cs",
-              "RelativeToolTip": "Models\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T03:42:33.984Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T02:20:04.27Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ReparacionesController.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ReparacionesController.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
-              "RelativeToolTip": "Controllers\\ReparacionesController.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAADMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T06:03:07.757Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "UpcSystemApi.csproj",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
-              "RelativeDocumentMoniker": "UpcSystemApi.csproj",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.csproj",
-              "RelativeToolTip": "UpcSystemApi.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-05-05T01:36:45.272Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "UpcSystemApi.http",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.http",
-              "RelativeDocumentMoniker": "UpcSystemApi.http",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi.http",
-              "RelativeToolTip": "UpcSystemApi.http",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
-              "WhenOpened": "2026-05-05T01:33:59.122Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\JosueAB\\Music\\UpcSystemApi\\UpcSystemApi\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAABwAAAAKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-05T00:45:39.65Z"
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
             }
           ]
         }

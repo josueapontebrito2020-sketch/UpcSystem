@@ -1,0 +1,447 @@
+/* ============================================================
+   ARCHIVO: dashboard.css
+   USO: Estilos para los paneles de Usuario y Propietario.
+   ============================================================ */
+
+/* 1. BARRA SUPERIOR (TOPBAR) */
+.topbar {
+  height: 64px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.avatar, .avatar-owner {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.avatar       { background: linear-gradient(135deg, var(--accent2), var(--accent)); }
+.avatar-owner { background: linear-gradient(135deg, #d97706, #f59e0b); color: #000; }
+
+.user-info  { display: flex; align-items: center; gap: 1rem; }
+.user-name  { font-size: 0.88rem; font-weight: 500; }
+
+.btn-logout {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--muted);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.btn-logout:hover { border-color: var(--accent); color: var(--accent); }
+
+
+/* 2. LAYOUT PRINCIPAL */
+.dashboard {
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 64px;
+}
+
+
+/* 3. SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: var(--surface);
+  border-right: 1px solid var(--border);
+  padding: 2rem 0;
+  position: fixed;
+  height: calc(100vh - 64px);
+  overflow-y: auto;
+}
+
+.sidebar-section { padding: 0 1.5rem; margin-bottom: 2rem; }
+
+.sidebar-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  color: var(--muted);
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: 0.88rem;
+  transition: all 0.2s;
+  margin-bottom: 0.3rem;
+  text-decoration: none;
+}
+.sidebar-item:hover,
+.sidebar-item.active {
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--accent);
+}
+
+
+/* 4. ÁREA DE CONTENIDO */
+.content {
+  flex: 1;
+  padding: 2rem;
+  margin-left: 260px;
+  background: var(--bg);
+  min-height: calc(100vh - 64px);
+}
+
+.page-header { margin-bottom: 2rem; }
+.page-header h1 {
+  font-family: 'Syne', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 800;
+  margin-bottom: 0.3rem;
+}
+
+
+/* 5. TARJETAS DE ESTADÍSTICAS */
+.stat-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.5rem;
+  transition: transform 0.3s;
+}
+.stat-card:hover { transform: translateY(-5px); }
+.stat-card .label { font-size: 0.78rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 0.5rem; }
+.stat-card .value { font-family: 'Syne', sans-serif; font-size: 2.2rem; font-weight: 800; }
+.stat-card .sub   { font-size: 0.78rem; color: var(--muted); margin-top: 0.3rem; }
+.stat-card .trend { font-size: 0.78rem; margin-top: 0.3rem; color: var(--muted); }
+.stat-card .trend.up { color: #00cc66; }
+
+
+/* 6. SECCIÓN DE REPARACIONES */
+.repairs-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.repairs-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.repair-item {
+  padding: 1.2rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 1.5rem;
+  align-items: center;
+  transition: background 0.2s;
+}
+.repair-item:hover { background: rgba(0, 212, 255, 0.03); }
+.repair-item:last-child { border-bottom: none; }
+
+.device-icon { font-size: 1.6rem; }
+.device-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.2rem; }
+.device-info p  { font-size: 0.78rem; color: var(--muted); }
+.repair-date    { font-size: 0.78rem; color: var(--muted); white-space: nowrap; }
+
+
+/* 7. TABLA DE REPARACIONES (OWNER) */
+.repairs-table {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  overflow: hidden;
+  margin-top: 1.5rem;
+}
+
+.table-head {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.2fr 1fr 1.2fr;
+  padding: 0.9rem 1.5rem;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.table-row {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.2fr 1fr 1.2fr;
+  padding: 1.1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  align-items: center;
+  font-size: 0.85rem;
+  transition: background 0.2s;
+}
+.table-row:hover      { background: rgba(0, 212, 255, 0.03); }
+.table-row:last-child { border-bottom: none; }
+
+
+/* 8. STATUS BADGES */
+.status-badge {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-block;
+}
+.status-progress, .s-progress { background: rgba(0, 212, 255, 0.15);  color: var(--accent); }
+.status-done                  { background: rgba(0, 204, 102, 0.15);  color: #00cc66; }
+.status-pending               { background: rgba(255, 209, 26, 0.15); color: #ffd11a; }
+
+
+/* 9. COLORES PARA STAT CARDS */
+.c-accent { color: var(--accent); }
+.c-yellow { color: #ffd11a; }
+.c-green  { color: #00cc66; }
+.c-purple { color: #a78bfa; } /* fix: owner.css tenía font-size: 300px aquí */
+
+
+/* 10. BADGES DEL SIDEBAR */
+.badge {
+  margin-left: auto;
+  background: var(--accent);
+  color: var(--bg);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  min-width: 20px;
+  text-align: center;
+}
+.badge-red { background: #ef4444; color: #fff; }
+
+
+/* 11. CHAT */
+.chat-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  height: calc(100vh - 180px);
+  background: var(--surface);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+/* Lista de contactos */
+.chat-list {
+  border-right: 1px solid var(--border);
+  overflow-y: auto;
+  background: var(--surface);
+}
+
+.chat-list-head {
+  padding: 1.2rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-contact {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.2rem;
+  cursor: pointer;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+}
+.chat-contact:hover  { background: rgba(0, 212, 255, 0.04); }
+.chat-contact.active { background: rgba(0, 212, 255, 0.08); }
+
+.contact-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: #fff;
+}
+
+.contact-info { flex: 1; min-width: 0; }
+.contact-info h4 {
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.contact-info p {
+  font-size: 0.75rem;
+  color: var(--muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.online-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00cc66;
+  flex-shrink: 0;
+}
+
+/* Ventana del chat */
+.chat-window {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+.chat-header h3 { font-size: 0.95rem; font-weight: 700; margin: 0; }
+.chat-header p  { font-size: 0.75rem; color: #00cc66; margin: 0; }
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+/* Burbujas de mensaje */
+.msg {
+  max-width: 70%;
+  padding: 0.75rem 1rem;
+  border-radius: 14px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  word-break: break-word;
+}
+.msg.received {
+  background: var(--surface2);
+  border-bottom-left-radius: 4px;
+  align-self: flex-start;
+}
+.msg.sent {
+  background: var(--accent);
+  color: var(--bg);
+  border-bottom-right-radius: 4px;
+  align-self: flex-end;
+}
+
+/* Hora del mensaje — fuera de la burbuja */
+.msg-time {
+  font-size: 0.7rem;
+  color: var(--muted);
+  margin-bottom: 0.8rem;
+  padding: 0 0.3rem;
+}
+.msg-time.right { text-align: right; }
+
+/* Input de escritura */
+.chat-input {
+  display: flex;
+  gap: 0.8rem;
+  padding: 1rem 1.5rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface);
+  flex-shrink: 0;
+}
+
+.chat-input input {
+  flex: 1;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.75rem 1rem; /* sin padding-left grande */
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-family: 'DM Sans', sans-serif;
+  outline: none;
+}
+.chat-input input:focus { border-color: var(--accent); }
+
+.btn-send {
+  background: var(--accent);
+  color: var(--bg);
+  border: none;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  flex-shrink: 0;
+}
+.btn-send:hover { background: #00b8d9; }
+
+
+/* 12. RESPONSIVE */
+@media (max-width: 992px) {
+  .sidebar { width: 80px; }
+  .sidebar-label, .sidebar-item span { display: none; }
+  .content { margin-left: 80px; }
+  .chat-layout { grid-template-columns: 200px 1fr; }
+}
+
+@media (max-width: 768px) {
+  .sidebar { display: none; }
+  .content { margin-left: 0; padding: 1rem; }
+  .repair-item { grid-template-columns: 1fr auto; }
+  .chat-layout { grid-template-columns: 1fr; }
+  .chat-list { display: none; }
+  .table-head { display: none; }
+  .table-row { grid-template-columns: 1fr; gap: 0.5rem; }
+}
+
+/* Fix: evita que auth.css pise el input del chat */
+.chat-input input {
+  padding-left: 1rem !important;
+}

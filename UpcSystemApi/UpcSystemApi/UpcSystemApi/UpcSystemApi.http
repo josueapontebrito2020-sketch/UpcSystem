@@ -1,0 +1,6 @@
+@UpcSystemApi_HostAddress = http://localhost:5067
+
+GET {{UpcSystemApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
