@@ -36,7 +36,7 @@
 
             // Lee la ApiKey correcta desde appsettings.json → "ApiKey": "Tuclave123"
             var appSettings = context.RequestServices.GetRequiredService<IConfiguration>();
-            var apiKey = appSettings.GetValue<string>("ApiKey"); // Obtiene "Tuclave123"
+            var apiKey = appSettings.GetValue<string>("ApiKey"); 
 
             // Compara la ApiKey del encabezado con la del appsettings.json
             // Si NO coinciden, rechaza con error 401

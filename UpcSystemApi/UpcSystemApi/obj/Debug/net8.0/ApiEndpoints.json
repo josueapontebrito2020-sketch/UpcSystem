@@ -16,6 +16,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UpcSystemApi.Controllers.AccesoriosController",
+    "Method": "Crear",
+    "RelativePath": "api/Accesorios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nuevo",
+        "Type": "UpcSystemApi.Models.Accesorio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.AccesoriosController",
+    "Method": "GetById",
+    "RelativePath": "api/Accesorios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.AccesoriosController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Accesorios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "datos",
+        "Type": "UpcSystemApi.Models.Accesorio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.AccesoriosController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Accesorios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UpcSystemApi.Controllers.AuthController",
     "Method": "Login",
     "RelativePath": "api/Auth/login",
@@ -80,6 +149,59 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UpcSystemApi.Controllers.MensajesController",
+    "Method": "GetById",
+    "RelativePath": "api/Mensajes/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.MensajesController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Mensajes/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "datos",
+        "Type": "UpcSystemApi.Models.Mensaje",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.MensajesController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Mensajes/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UpcSystemApi.Controllers.ReparacionesController",
     "Method": "GetByUsuario",
     "RelativePath": "api/Reparaciones",
@@ -106,6 +228,59 @@
       {
         "Name": "nueva",
         "Type": "UpcSystemApi.Models.Reparacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.ReparacionesController",
+    "Method": "GetById",
+    "RelativePath": "api/Reparaciones/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.ReparacionesController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Reparaciones/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "datos",
+        "Type": "UpcSystemApi.Models.Reparacion",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.ReparacionesController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Reparaciones/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
         "IsRequired": true
       }
     ],
@@ -153,6 +328,75 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "UpcSystemApi.Controllers.ServiciosController",
+    "Method": "Crear",
+    "RelativePath": "api/Servicios",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nuevo",
+        "Type": "UpcSystemApi.Models.Servicio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.ServiciosController",
+    "Method": "GetById",
+    "RelativePath": "api/Servicios/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.ServiciosController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Servicios/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "datos",
+        "Type": "UpcSystemApi.Models.Servicio",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.ServiciosController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Servicios/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "UpcSystemApi.Controllers.StatsController",
     "Method": "GetStats",
     "RelativePath": "api/Stats",
@@ -170,6 +414,75 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.TecnicosController",
+    "Method": "Crear",
+    "RelativePath": "api/Tecnicos",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "nuevo",
+        "Type": "UpcSystemApi.Models.Tecnico",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.TecnicosController",
+    "Method": "GetById",
+    "RelativePath": "api/Tecnicos/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.TecnicosController",
+    "Method": "Actualizar",
+    "RelativePath": "api/Tecnicos/{id}",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "datos",
+        "Type": "UpcSystemApi.Models.Tecnico",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "UpcSystemApi.Controllers.TecnicosController",
+    "Method": "Eliminar",
+    "RelativePath": "api/Tecnicos/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   }
 ]

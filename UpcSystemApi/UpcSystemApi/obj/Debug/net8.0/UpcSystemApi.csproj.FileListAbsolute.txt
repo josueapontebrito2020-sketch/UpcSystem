@@ -423,3 +423,5 @@ C:\Users\Joshua raton\Documents\UpcSystem v0.2\UpcSystemApi\UpcSystemApi\UpcSyst
 C:\Users\Joshua raton\Documents\UpcSystem v0.2\UpcSystemApi\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.pdb
 C:\Users\Joshua raton\Documents\UpcSystem v0.2\UpcSystemApi\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\UpcSystemApi.genruntimeconfig.cache
 C:\Users\Joshua raton\Documents\UpcSystem v0.2\UpcSystemApi\UpcSystemApi\UpcSystemApi\obj\Debug\net8.0\ref\UpcSystemApi.dll
+C:\Users\Joshua raton\Documents\UpcSystem v0.2\UpcSystemApi\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Joshua raton\Documents\UpcSystem v0.2\UpcSystemApi\UpcSystemApi\UpcSystemApi\bin\Debug\net8.0\BCrypt-Net-Next.dll

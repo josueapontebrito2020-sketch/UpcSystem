@@ -14,25 +14,30 @@ namespace UpcSystemApi.Helpers
             _config = config;
         }
 
-        public string GenerateToken(string email, string role)
+        public string GenerateToken(string email, string role, string nombre, string apellido, int id)  
         {
             var key = Encoding.UTF8.GetBytes(_config["JwtSettings:Key"]);
 
             var claims = new[]
             {
-                new Claim(ClaimTypes.Email, email),
-                new Claim(ClaimTypes.Role, role)
+                new Claim(JwtRegisteredClaimNames.Sub, email),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                new Claim("id", id.ToString()),       // ← id del usuario
+                new Claim("nombre", nombre),          // ← nombre
+                new Claim("apellido", apellido),      // ← apellido
+                new Claim(ClaimTypes.Email, email),   // ← correo
+                new Claim(ClaimTypes.Role, role),     // ← rol
             };
 
             var token = new JwtSecurityToken(
-                issuer: _config["JwtSettings:Issuer"],
-                audience: _config["JwtSettings:Audience"],
+                issuer: _config["JwtSettings:Issuer"],     // Quién emite el token → "UpcSystemApi"
+                audience: _config["JwtSettings:Audience"], // Para quién es el token → "UpcSystemApp"
                 claims: claims,
                 expires: DateTime.UtcNow.AddMinutes(
-                    double.Parse(_config["JwtSettings:ExpiresInMinutes"])),
+                    double.Parse(_config["JwtSettings:ExpiresInMinutes"]!)),
                 signingCredentials: new SigningCredentials(
-                    new SymmetricSecurityKey(key),
-                    SecurityAlgorithms.HmacSha256)
+                    new SymmetricSecurityKey(key),          // Usa la clave secreta
+                    SecurityAlgorithms.HmacSha256)          // Con el algoritmo HmacSha256 para firmar
             );
 
             return new JwtSecurityTokenHandler().WriteToken(token);
