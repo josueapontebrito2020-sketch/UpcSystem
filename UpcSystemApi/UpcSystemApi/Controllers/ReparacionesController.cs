@@ -1,52 +1,75 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using UpcSystemApi.Models;
 
 namespace UpcSystemApi.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
+    [Route("api/[controller]")] 
+    [ApiController] 
     public class ReparacionesController : ControllerBase
     {
-        // GET api/reparaciones?usuarioId=2
-        [HttpGet]
-        public IActionResult GetByUsuario([FromQuery] int usuarioId)
-        {
-            var lista = FakeDatabase.Reparaciones
-                .Where(r => r.UsuarioId == usuarioId)
-                .ToList();
+        private readonly AppDbContext _context; 
 
-            return Ok(lista);
+        
+        public ReparacionesController(AppDbContext context)
+        {
+            _context = context; 
         }
 
-        // GET api/reparaciones/todas  (para el panel del dueño)
-        [HttpGet("todas")]
-        public IActionResult GetTodas()
+        [HttpGet] // Responde a GET api/reparaciones?usuarioId=2
+        public async Task<IActionResult> GetByUsuario([FromQuery] int usuarioId)
         {
-            return Ok(FakeDatabase.Reparaciones);
+            var lista = await _context.Reparaciones
+                .Where(r => r.UsuarioId == usuarioId) // Filtra las reparaciones del usuario
+                .ToListAsync();
+
+            return Ok(lista); 
         }
 
-        // POST api/reparaciones
-        [HttpPost]
-        public IActionResult Crear([FromBody] Reparacion nueva)
+        [HttpGet("todas")] // Responde a GET api/reparaciones/todas (para el panel del dueño)
+        public async Task<IActionResult> GetTodas()
         {
-            nueva.Id = FakeDatabase.Reparaciones.Count + 1;
-            nueva.Fecha = DateTime.Now.ToString("yyyy-MM-dd");
-            nueva.Estado = "Recibido";
+            // Trae todas las reparaciones e incluye el nombre del cliente
+            var lista = await _context.Reparaciones.Select(r => new
+            {
+                r.Id,
+                r.UsuarioId,
+                r.Dispositivo,
+                r.Problema,
+                r.Tecnico,
+                r.Estado,
+                r.Fecha,
+                // Busca el usuario relacionado y arma su nombre completo
+                nombreCliente = _context.Users
+                    .Where(u => u.Id == r.UsuarioId)
+                    .Select(u => u.Nombre + " " + u.Apellido)
+                    .FirstOrDefault() ?? "Usuario #" + r.UsuarioId
+            }).ToListAsync();
 
-            FakeDatabase.Reparaciones.Add(nueva);
-            return Ok(nueva);
+            return Ok(lista); // Devuelve todas las reparaciones con código 200
         }
 
-        // PATCH api/reparaciones/1/estado
-        [HttpPatch("{id}/estado")]
-        public IActionResult CambiarEstado(int id, [FromBody] string nuevoEstado)
+        [HttpPost] // Responde a POST api/reparaciones
+        public async Task<IActionResult> Crear([FromBody] Reparacion nueva)
         {
-            var rep = FakeDatabase.Reparaciones.FirstOrDefault(r => r.Id == id);
+            nueva.Fecha = DateTime.Now.ToString("yyyy-MM-dd"); // Asigna la fecha actual
+            nueva.Estado = "Recibido"; 
+            _context.Reparaciones.Add(nueva); // Agrega la reparación a la BD
+            await _context.SaveChangesAsync(); // Guarda los cambios en la BD
+            return Ok(nueva); 
+        }
+
+        [HttpPatch("{id}/estado")] // Responde a PATCH api/reparaciones/1/estado
+        public async Task<IActionResult> CambiarEstado(int id, [FromBody] string nuevoEstado)
+        {
+            var rep = await _context.Reparaciones.FindAsync(id); // Busca la reparación por ID
+
             if (rep == null)
-                return NotFound(new { mensaje = "Reparación no encontrada" });
+                return NotFound(new { mensaje = "Reparación no encontrada" }); 
 
-            rep.Estado = nuevoEstado;
-            return Ok(rep);
+            rep.Estado = nuevoEstado; // Actualiza el estado
+            await _context.SaveChangesAsync(); // Guarda los cambios en la BD
+            return Ok(rep); 
         }
     }
 }

@@ -1,12 +1,7 @@
 {
   "ExpandedNodes": [
     "",
-    "\\UpcSystemApi",
-    "\\UpcSystemApi\\UpcSystemApi",
-    "\\UpcSystemApi\\UpcSystemApi\\bin",
-    "\\UpcSystemApi\\UpcSystemApi\\bin\\Debug",
-    "\\UpcSystemApi\\UpcSystemApi\\Controllers"
+    "\\UpcSystemApi"
   ],
-  "SelectedNode": "\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
   "PreviewInSolutionExplorer": false
 }

@@ -1,52 +1,53 @@
 ﻿namespace UpcSystemApi.Middleware
 {
-    using Microsoft.AspNetCore.Http;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using System.Threading.Tasks;
+    using Microsoft.AspNetCore.Http;         // Para manejar peticiones y respuestas HTTP
+    using Microsoft.Extensions.Configuration; // Para leer el appsettings.json (donde está la ApiKey)
+    using Microsoft.Extensions.DependencyInjection; // Para obtener servicios registrados
+    using System.Threading.Tasks;            // Para usar async/await
 
-    public class ApiKeyMiddleware
+    public class ApiKeyMiddleware 
     {
-        private readonly RequestDelegate _next;
-        private const string APIKEYNAME = "x-api-key"; // Así se llamará el encabezado
+        private readonly RequestDelegate _next; // Guarda la referencia al siguiente paso del pipeline
+
+        private const string APIKEYNAME = "x-api-key"; 
 
         public ApiKeyMiddleware(RequestDelegate next)
         {
-            _next = next;
+            _next = next; // Recibe e inyecta el siguiente middleware en la cadena
         }
 
-        public async Task InvokeAsync(HttpContext context)
+        public async Task InvokeAsync(HttpContext context) // Se ejecuta automáticamente en CADA petición que llega
         {
-            // Permitir acceso a Swagger sin API Key
-            if (context.Request.Path.StartsWithSegments("/swagger"))
+            //Si es la peticion Es Option la deja pasar sin validar
+            if (context.Request.Method == "OPTIONS")
             {
-                await _next(context);
+                await _next(context); // Pasa al siguiente middleware sin revisar la API Key
                 return;
             }
 
-            // 1. Intentar extraer la API Key del header
+            
+            // Si NO existe ese encabezado, rechaza con error 401
             if (!context.Request.Headers.TryGetValue(APIKEYNAME, out var extractedApiKey))
             {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Error: No enviaste la API Key.");
-                return;
+                context.Response.StatusCode = 401; 
+                await context.Response.WriteAsync("Error: No enviaste la API Key."); 
+                return; 
             }
 
-            // 2. Obtener API Key real desde appsettings.json
+            // Lee la ApiKey correcta desde appsettings.json → "ApiKey": "Tuclave123"
             var appSettings = context.RequestServices.GetRequiredService<IConfiguration>();
-            var apiKey = appSettings.GetValue<string>("ApiKey");
+            var apiKey = appSettings.GetValue<string>("ApiKey"); // Obtiene "Tuclave123"
 
-            // 3. Validar
+            // Compara la ApiKey del encabezado con la del appsettings.json
+            // Si NO coinciden, rechaza con error 401
             if (!apiKey.Equals(extractedApiKey))
             {
-                context.Response.StatusCode = 401;
-                await context.Response.WriteAsync("Error: La API Key es incorrecta.");
-                return;
+                context.Response.StatusCode = 401; 
+                await context.Response.WriteAsync("Error: La API Key es incorrecta."); 
+                return; 
             }
 
-            // 4. Continuar si todo está correcto
-            await _next(context);
+            await _next(context); //API Key válida → deja pasar la petición al controller correspondiente
         }
     }
 }
-    

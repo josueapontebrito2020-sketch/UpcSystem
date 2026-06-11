@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("UpcSystemApi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63525f7a594a099a0df6e50dd277be79fba974b3")]
 [assembly: System.Reflection.AssemblyProductAttribute("UpcSystemApi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("UpcSystemApi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
