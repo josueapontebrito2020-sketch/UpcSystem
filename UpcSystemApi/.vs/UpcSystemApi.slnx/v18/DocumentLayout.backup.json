@@ -1,0 +1,380 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\helpers\\jwthelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\mensajescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\mensajescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\accesorioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\accesorioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\tecnico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\tecnico.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\reparacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\reparacion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\mensaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\models\\accesorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\models\\accesorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\middleware\\apikeymiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\servicioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\servicioscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\statscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\statscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\tecnicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\tecnicoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\controllers\\reparacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\controllers\\reparacionescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|c:\\users\\joshua raton\\documents\\upcsystem v0.2\\upcsystemapi\\upcsystemapi\\upcsystemapi\\migrations\\20260513211520_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{531F11FF-1AE3-2C5C-351E-B2B95A0E2334}|UpcSystemApi\\UpcSystemApi.csproj|solutionrelative:upcsystemapi\\migrations\\20260513211520_inicial.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 10,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e5c86464-96be-4d7c-9a8b-abcb3bbf5f92}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{40ea2e6b-2121-4bb8-a43e-c83c04b51041}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "JwtHelper.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Helpers\\JwtHelper.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Helpers\\JwtHelper.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Helpers\\JwtHelper.cs",
+              "RelativeToolTip": "UpcSystemApi\\Helpers\\JwtHelper.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAIA+wBIAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-02T12:19:12.672Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Program.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Program.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Program.cs",
+              "RelativeToolTip": "UpcSystemApi\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T11:03:48.412Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ApiKeyMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Middleware\\ApiKeyMiddleware.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Middleware\\ApiKeyMiddleware.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Middleware\\ApiKeyMiddleware.cs",
+              "RelativeToolTip": "UpcSystemApi\\Middleware\\ApiKeyMiddleware.cs",
+              "ViewState": "AgIAACoAAAAAAAAAAAAYwDEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T10:56:38.692Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\AppDbContext.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:05:55.092Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AccesoriosController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\AccesoriosController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\AccesoriosController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\AccesoriosController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\AccesoriosController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAABRwCAAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:30:07.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwCIAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:27:34.254Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MensajesController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\MensajesController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\MensajesController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\MensajesController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAkwCAAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:19:17.119Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\appsettings.json",
+              "RelativeDocumentMoniker": "UpcSystemApi\\appsettings.json",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\appsettings.json",
+              "RelativeToolTip": "UpcSystemApi\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-05-14T11:01:54.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Accesorio.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Accesorio.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\Accesorio.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Accesorio.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\Accesorio.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T11:01:35.115Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\RegisterRequest.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T11:01:49.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Tecnico.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Tecnico.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\Tecnico.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Tecnico.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\Tecnico.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T11:01:51.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\User.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\User.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAA+wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-14T11:01:52.867Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "ServiciosController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\ServiciosController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\ServiciosController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\ServiciosController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\ServiciosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:27:55.794Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T22:41:21.64Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Reparacion.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\Reparacion.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Reparacion.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\Reparacion.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:44:09.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "StatsController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\StatsController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\StatsController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\StatsController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\StatsController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:30:41.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Mensaje.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Models\\Mensaje.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Models\\Mensaje.cs",
+              "RelativeToolTip": "UpcSystemApi\\Models\\Mensaje.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:45:10.568Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TecnicosController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\TecnicosController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\TecnicosController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\TecnicosController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\TecnicosController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:29:02.818Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ReparacionesController.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "RelativeToolTip": "UpcSystemApi\\Controllers\\ReparacionesController.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAABRwD4AAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-12T06:46:17.613Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "20260513211520_Inicial.cs",
+              "DocumentMoniker": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Migrations\\20260513211520_Inicial.cs",
+              "RelativeDocumentMoniker": "UpcSystemApi\\Migrations\\20260513211520_Inicial.cs",
+              "ToolTip": "C:\\Users\\Joshua raton\\Documents\\UpcSystem v0.2\\UpcSystemApi\\UpcSystemApi\\UpcSystemApi\\Migrations\\20260513211520_Inicial.cs",
+              "RelativeToolTip": "UpcSystemApi\\Migrations\\20260513211520_Inicial.cs",
+              "ViewState": "AgIAAEAAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-13T21:15:20.558Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

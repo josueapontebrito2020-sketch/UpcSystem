@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\UpcSystemApi",
+    "\\UpcSystemApi\\UpcSystemApi",
+    "\\UpcSystemApi\\UpcSystemApi\\bin",
+    "\\UpcSystemApi\\UpcSystemApi\\bin\\Debug",
+    "\\UpcSystemApi\\UpcSystemApi\\Controllers",
+    "\\UpcSystemApi\\UpcSystemApi\\Models"
+  ],
+  "SelectedNode": "\\UpcSystemApi\\UpcSystemApi\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}
