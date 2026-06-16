@@ -3,7 +3,7 @@
    USO: Estilos para los paneles de Usuario y Propietario.
    ============================================================ */
 
-/* 1. BARRA SUPERIOR (TOPBAR) */
+/* 1. BARRA         SUPERIOR      (TOPBAR) */
 .topbar {
   height: 64px;
   background: var(--surface);
@@ -99,7 +99,7 @@
 }
 
 
-/* 4. ÁREA DE CONTENIDO */
+/* 4. ÁREA     DE    CONTENIDO */
 .content {
   flex: 1;
   padding: 2rem;
